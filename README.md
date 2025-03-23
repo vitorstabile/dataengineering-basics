@@ -16,8 +16,20 @@
       - [Chapter 1 - Part 3.1: The Data Engineering Lifecycle Stages](#chapter1part3.1)
       - [Chapter 1 - Part 3.2: Real-World Application](#chapter1part3.2)
     - [Chapter 1 - Part 4: Introduction to Data Architecture](#chapter1part4)
+      - [Chapter 1 - Part 4.1: What is Data Architecture?](#chapter1part4.1)
+      - [Chapter 1 - Part 4.2: Data Architecture Patterns](#chapter1part4.2)
+      - [Chapter 1 - Part 4.3: Data Architecture vs. Data Modeling](#chapter1part4.3)
+      - [Chapter 1 - Part 4.4: The Role of a Data Architect](#chapter1part4.4)
     - [Chapter 1 - Part 5: Data Engineering vs. Data Science vs. Data Analytics](#chapter1part5)
+      - [Chapter 1 - Part 5.1: Defining Data Engineering](#chapter1part5.1)
+      - [Chapter 1 - Part 5.2: Defining Data Science](#chapter1part5.2)
+      - [Chapter 1 - Part 5.3: Defining Data Analytics](#chapter1part5.3)
+      - [Chapter 1 - Part 5.4: Key Differences and Overlaps](#chapter1part5.4)
     - [Chapter 1 - Part 6: Setting up Your Data Engineering Environment (Cloud or Local)](#chapter1part6)
+      - [Chapter 1 - Part 6.1: Cloud vs. Local Environments: A Detailed Comparison](#chapter1part6.1)
+      - [Chapter 1 - Part 6.2: Setting Up a Local Data Engineering Environment](#chapter1part6.2)
+      - [Chapter 1 - Part 6.3: Setting Up a Cloud Data Engineering Environment](#chapter1part6.3)
+      - [Chapter 1 - Part 6.4: Practice Activities](#chapter1part6.4)
   
 <div align="center"><img src="img/example-w1054-h609.png" width=1054 height=609><br><sub>Example - (<a href='https://github.com/vitorstabile'>Work by Vitor Garcia</a>) </sub></div>
   
@@ -213,6 +225,92 @@ ShopSphere uses a combination of batch processing and stream processing to analy
 
 ### <a name="chapter1part1"></a>Chapter 1 - Part 4: Introduction to Data Architecture
 
+#### <a name="chapter1part4.1"></a>Chapter 1 - Part 4.1: What is Data Architecture?
+
+**Key Principles of Data Architecture**
+
+**Components of a Data Architecture**
+
+#### <a name="chapter1part4.2"></a>Chapter 1 - Part 4.2: Data Architecture Patterns
+
+**Data Warehouse Architecture**
+
+**Data Lake Architecture**
+
+**Lambda Architecture**
+
+**Kappa Architecture**
+
+#### <a name="chapter1part4.3"></a>Chapter 1 - Part 4.3: Data Architecture vs. Data Modeling
+
+#### <a name="chapter1part4.4"></a>Chapter 1 - Part 4.4: The Role of a Data Architect
+
 ### <a name="chapter1part1"></a>Chapter 1 - Part 5: Data Engineering vs. Data Science vs. Data Analytics
 
+#### <a name="chapter1part5.1"></a>Chapter 1 - Part 5.1: Defining Data Engineering
+
+**Key Responsibilities of a Data Engineer**
+
+**Tools and Technologies Used by Data Engineers**
+
+**Example Scenario: Building a Data Pipeline for an E-commerce Company**
+
+**Example Scenario: Managing a Data Lake for a Media Streaming Service**
+
+#### <a name="chapter1part5.2"></a>Chapter 1 - Part 5.2: Defining Data Science
+
+**Key Responsibilities of a Data Scientist**
+
+**Tools and Technologies Used by Data Scientists**
+
+**Example Scenario: Building a Recommendation System for an Online Retailer**
+
+**Example Scenario: Predicting Customer Churn for a Subscription Service**
+
+#### <a name="chapter1part5.3"></a>Chapter 1 - Part 5.3: Defining Data Analytics
+
+**Key Responsibilities of a Data Analyst**
+
+**Tools and Technologies Used by Data Analysts**
+
+**Example Scenario: Analyzing Sales Data to Identify Top-Performing Products**
+
+**Example Scenario: Analyzing Website Traffic to Improve User Engagement**
+
+#### <a name="chapter1part5.4"></a>Chapter 1 - Part 5.4: Key Differences and Overlaps
+
+**Overlaps**
+
+**Collaboration**
+
 ### <a name="chapter1part1"></a>Chapter 1 - Part 6: Setting up Your Data Engineering Environment (Cloud or Local)
+
+#### <a name="chapter1part6.1"></a>Chapter 1 - Part 6.1: Cloud vs. Local Environments: A Detailed Comparison
+
+**Cloud Environments**
+
+**Advantages:**
+
+**Disadvantages:**
+
+**Local Environments**
+
+**Advantages:**
+
+**Disadvantages:**
+
+**Choosing the Right Environment**
+
+#### <a name="chapter1part6.2"></a>Chapter 1 - Part 6.2: Setting Up a Local Data Engineering Environment
+
+**Example: Setting up PostgreSQL Locally**
+
+**Example: Using Python to Connect to PostgreSQL**
+
+#### <a name="chapter1part6.3"></a>Chapter 1 - Part 6.3: Setting Up a Cloud Data Engineering Environment
+
+**Example: Setting up an AWS EC2 Instance**
+
+**Example: Setting up an AWS RDS PostgreSQL Instance**
+
+#### <a name="chapter1part6.4"></a>Chapter 1 - Part 6.4: Practice Activities
