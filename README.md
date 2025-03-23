@@ -13,6 +13,8 @@
     - [Chapter 1 - Part 5: Data Engineering vs. Data Science vs. Data Analytics](#chapter1part5)
     - [Chapter 1 - Part 6: Setting up Your Data Engineering Environment (Cloud or Local)](#chapter1part6)
   
+<div align="center"><img src="img/example-w1054-h609.png" width=1054 height=609><br><sub>Example - (<a href='https://github.com/vitorstabile'>Work by Vitor Garcia</a>) </sub></div>
+  
 ## <a name="chapter1"></a>Chapter 1: Introduction to Data Engineering
 
 ### <a name="chapter1part1"></a>Chapter 1 - Part 1: What is Data Engineering?
