@@ -8,7 +8,13 @@
       - [Chapter 1 - Part 1.2: Key Concepts in Data Engineering](#chapter1part1.2)
       - [Chapter 1 - Part 1.3: Practical Examples and Demonstrations](#chapter1part1.3)
     - [Chapter 1 - Part 2: Data Engineer Roles and Responsibilities](#chapter1part2)
+      - [Chapter 1 - Part 2.1: Core Responsibilities of a Data Engineer](#chapter1part2.1)
+      - [Chapter 1 - Part 2.2: Specific Roles Within Data Engineering](#chapter1part2.2)
+      - [Chapter 1 - Part 2.3: Skills Required for Data Engineering Roles](#chapter1part2.3)
+      - [Chapter 1 - Part 2.4: Real-World Application](#chapter1part2.4)
     - [Chapter 1 - Part 3: The Data Engineering Lifecycle](#chapter1part3)
+      - [Chapter 1 - Part 3.1: The Data Engineering Lifecycle Stages](#chapter1part3.1)
+      - [Chapter 1 - Part 3.2: Real-World Application](#chapter1part3.2)
     - [Chapter 1 - Part 4: Introduction to Data Architecture](#chapter1part4)
     - [Chapter 1 - Part 5: Data Engineering vs. Data Science vs. Data Analytics](#chapter1part5)
     - [Chapter 1 - Part 6: Setting up Your Data Engineering Environment (Cloud or Local)](#chapter1part6)
@@ -157,7 +163,53 @@ ShopSphere uses a combination of batch processing and stream processing to analy
 
 ### <a name="chapter1part1"></a>Chapter 1 - Part 2: Data Engineer Roles and Responsibilities
 
+#### <a name="chapter1part2.1"></a>Chapter 1 - Part 2.1: Core Responsibilities of a Data Engineer
+
+**Data Pipeline Development and Maintenance**
+
+**Data Storage and Management**
+
+**Data Quality and Governance**
+
+**Infrastructure Management**
+
+#### <a name="chapter1part2.2"></a>Chapter 1 - Part 2.2: Specific Roles Within Data Engineering
+
+**ETL Developer**
+
+**Data Warehouse Engineer**
+
+**Data Lake Engineer**
+
+**Data Infrastructure Engineer**
+
+#### <a name="chapter1part2.3"></a>Chapter 1 - Part 2.3: Skills Required for Data Engineering Roles
+
+**Technical Skills**
+
+**Analytical Skills**
+
+**Soft Skills**
+
+#### <a name="chapter1part2.4"></a>Chapter 1 - Part 2.4: Real-World Application
+
 ### <a name="chapter1part1"></a>Chapter 1 - Part 3: The Data Engineering Lifecycle
+
+#### <a name="chapter1part3.1"></a>Chapter 1 - Part 3.1: The Data Engineering Lifecycle Stages
+
+**1. Planning**
+
+**2. Data Acquisition**
+
+**3. Data Storage**
+
+**4. Data Processing**
+
+**5. Data Analysis**
+
+**6. Deployment and Monitoring**
+
+#### <a name="chapter1part3.2"></a>Chapter 1 - Part 3.2: Real-World Application
 
 ### <a name="chapter1part1"></a>Chapter 1 - Part 4: Introduction to Data Architecture
 
