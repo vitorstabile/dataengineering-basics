@@ -639,9 +639,30 @@ A data architect is responsible for designing, developing, and maintaining an or
 
 #### <a name="chapter1part5.4"></a>Chapter 1 - Part 5.4: Key Differences and Overlaps
 
+While data engineering, data science, and data analytics are distinct fields, they often overlap and collaborate on projects. Here's a summary of the key differences and overlaps:
+
+| Feature               | Data Engineering                                         | Data Science                                                       | Data Analytics                                                |
+| :-------------------- | :-------------------------------------------------------:| :-----------------------------------------------------------------:| :------------------------------------------------------------:|
+| **Focus**             | Building and maintaining data infrastructure             | Extracting knowledge and insights from data                        | Analyzing data to answer business questions                   |
+| **Responsibilities**  | Data pipeline development, data storage, data governance | Statistical modeling, machine learning, data visualization         | Data collection, data analysis, data visualization            |
+| **Skills**            | Database management, ETL, cloud computing, programming   | Statistical analysis, machine learning, programming, communication | Data visualization, SQL, statistical analysis, communication  |
+| **Tools**             | Databases, data warehouses, ETL tools, cloud platforms   | Python, R, machine learning libraries, data visualization tools    | Excel, Tableau, Power BI, SQL, statistical software           |
+
 **Overlaps**
 
+While data engineering, data science, and data analytics are distinct fields, they often overlap and collaborate on projects. Here's a summary of the key differences and overlaps:
+
+- **Data Access:** All three roles require access to data, and data engineers are responsible for providing that access.
+
+- **Data Quality:** All three roles rely on high-quality data, and data engineers play a crucial role in ensuring data quality.
+
+- **Communication:** All three roles need to communicate their findings and insights to stakeholders.
+
+- **Programming:** While the depth of programming knowledge varies, all three roles benefit from programming skills, particularly in Python or R.
+
 **Collaboration**
+
+Data engineers, data scientists, and data analysts often collaborate on projects to achieve common goals. For example, a data engineer might build a data pipeline to collect and prepare data, a data scientist might build a machine learning model to predict customer churn, and a data analyst might analyze the model's results to identify customers at risk of churn.
 
 ### <a name="chapter1part1"></a>Chapter 1 - Part 6: Setting up Your Data Engineering Environment (Cloud or Local)
 
