@@ -806,7 +806,7 @@ While data engineering, data science, and data analytics are distinct fields, th
 
 Data engineers, data scientists, and data analysts often collaborate on projects to achieve common goals. For example, a data engineer might build a data pipeline to collect and prepare data, a data scientist might build a machine learning model to predict customer churn, and a data analyst might analyze the model's results to identify customers at risk of churn.
 
-### <a name="chapter1part1"></a>Chapter 1 - Part 6: Setting up Your Data Engineering Environment (Cloud or Local)
+### <a name="chapter1part6"></a>Chapter 1 - Part 6: Setting up Your Data Engineering Environment (Cloud or Local)
 
 #### <a name="chapter1part6.1"></a>Chapter 1 - Part 6.1: Cloud vs. Local Environments: A Detailed Comparison
 
