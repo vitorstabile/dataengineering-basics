@@ -30,6 +30,24 @@
       - [Chapter 1 - Part 6.2: Setting Up a Local Data Engineering Environment](#chapter1part6.2)
       - [Chapter 1 - Part 6.3: Setting Up a Cloud Data Engineering Environment](#chapter1part6.3)
       - [Chapter 1 - Part 6.4: Practice Activities](#chapter1part6.4)
+2. [Chapter 2: Data Storage Fundamentals](#chapter2)
+    - [Chapter 2 - Part 1: Introduction to Databases: Relational vs. NoSQL](#chapter2part1)
+      - [Chapter 2 - Part 1.1: Relational Databases: Concepts and Characteristics](#chapter2part1.1)
+      - [Chapter 2 - Part 1.2: NoSQL Databases: Concepts and Characteristics](#chapter2part1.2)
+      - [Chapter 2 - Part 1.3: Choosing Between Relational and NoSQL Databases](#chapter2part1.3)
+    - [Chapter 2 - Part 2: Relational Database Concepts: Tables, Schemas, and Keys](#chapter2part2)
+      - [Chapter 2 - Part 2.1: Tables: Organizing Data into Rows and Columns](#chapter2part2.1)
+      - [Chapter 2 - Part 2.2: Schemas: Organizing Tables and Defining Structure](#chapter2part2.2)
+      - [Chapter 2 - Part 2.3: Keys: Establishing Relationships and Ensuring Data Integrity](#chapter2part2.3)
+    - [Chapter 2 - Part 3: Introduction to SQL: Querying and Data Manipulation](#chapter2part3)
+      - [Chapter 2 - Part 3.1: Relational Database Refresher](#chapter2part3.1)
+      - [Chapter 2 - Part 3.2: Basic SQL Syntax and Structure](#chapter2part3.2)
+      - [Chapter 2 - Part 3.3: Retrieving Data with SELECT](#chapter2part3.3)
+      - [Chapter 2 - Part 3.4: Data Manipulation with INSERT, UPDATE, and DELETE](#chapter2part3.4)
+      - [Chapter 2 - Part 3.5: Advanced Filtering with LIKE, IN, and BETWEEN](#chapter2part3.5)
+      - [Chapter 2 - Part 3.6: Working with NULL Values](#chapter2part3.6)
+      - [Chapter 2 - Part 3.7: Aggregate Functions](#chapter2part3.7)
+      - [Chapter 2 - Part 3.8: Joining Tables](#chapter2part3.8)
   
 <div align="center"><img src="img/example-w1054-h609.png" width=1054 height=609><br><sub>Example - (<a href='https://github.com/vitorstabile'>Work by Vitor Garcia</a>) </sub></div>
   
@@ -837,3 +855,43 @@ Data engineers, data scientists, and data analysts often collaborate on projects
 **Example: Setting up an AWS RDS PostgreSQL Instance**
 
 #### <a name="chapter1part6.4"></a>Chapter 1 - Part 6.4: Practice Activities
+
+## <a name="chapter2"></a>Chapter 2: Data Storage Fundamentals
+
+### <a name="chapter2part1"></a>Chapter 2 - Part 1: Introduction to Databases: Relational vs. NoSQL
+
+#### <a name="chapter2part1.1"></a>Chapter 2 - Part 1.1: Relational Databases: Concepts and Characteristics
+
+**Core Concepts**
+
+**Examples of Relational Databases**
+
+**Advantages of Relational Databases**
+
+**Disadvantages of Relational Databases**
+
+#### <a name="chapter2part1.2"></a>Chapter 2 - Part 1.2: NoSQL Databases: Concepts and Characteristics
+
+**Core Concepts**
+
+**Types of NoSQL Databases**
+
+**Examples of NoSQL Databases**
+
+**Advantages of NoSQL Databases**
+
+**Disadvantages of NoSQL Databases**
+
+#### <a name="chapter2part1.3"></a>Chapter 2 - Part 1.3: Choosing Between Relational and NoSQL Databases
+
+| Feature               | Relational Databases (SQL)                                            | NoSQL Databases                                                    |
+| :-------------------- | :--------------------------------------------------------------------:| :-----------------------------------------------------------------:|
+| **Data Model**        | Tables with rows and columns                                          | Documents, key-value, column-family, graph                         |
+| **Schema**            | Fixed schema                                                          | Schema-less or schema-on-read                                      |
+| **Scalability**       | Vertical                                                              | Horizontal                                                         |
+| **Consistency**       | ACID                                                                  | BASE                                                               |
+| **Query Language**    | SQL                                                                   | Varies by database                                                 |
+| **Use Cases**         | Transactional applications, financial systems, inventory management   | Content management, social networks, big data analytics, real-time applications    |
+| **Examples**          | MySQL, PostgreSQL, SQL Server, Oracle                                 | MongoDB, Redis, Cassandra, Neo4j                                   |
+
+**Hypothetical Scenario**
