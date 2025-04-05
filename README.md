@@ -48,6 +48,21 @@
       - [Chapter 2 - Part 3.6: Working with NULL Values](#chapter2part3.6)
       - [Chapter 2 - Part 3.7: Aggregate Functions](#chapter2part3.7)
       - [Chapter 2 - Part 3.8: Joining Tables](#chapter2part3.8)
+    - [Chapter 2 - Part 4: NoSQL Database Concepts: Document, Key-Value, and Graph Stores](#chapter2part4)
+      - [Chapter 2 - Part 4.1: Document Databases](#chapter2part4.1)
+      - [Chapter 2 - Part 4.2: Key-Value Stores](#chapter2part4.2)
+      - [Chapter 2 - Part 4.3: Graph Databases](#chapter2part4.3)
+      - [Chapter 2 - Part 4.4: Choosing the Right NoSQL Database](#chapter2part4.4)
+    - [Chapter 2 - Part 5: Choosing the Right Database for Your Needs](#chapter2part5)
+      - [Chapter 2 - Part 5.1: Key Considerations for Database Selection](#chapter2part5.1)
+      - [Chapter 2 - Part 5.2: Database Selection Matrix](#chapter2part5.2)
+      - [Chapter 2 - Part 5.3: Practical Examples](#chapter2part5.3)
+    - [Chapter 2 - Part 6: Introduction to Data Warehouses and Data Lakes](#chapter2part6)
+      - [Chapter 2 - Part 6.1: Data Warehouses: Structured Data Repositories](#chapter2part6.1)
+      - [Chapter 2 - Part 6.2: Data Lakes: Flexible Data Repositories](#chapter2part6.2)
+      - [Chapter 2 - Part 6.3: Data Warehouse vs. Data Lake: Key Differences](#chapter2part6.3)
+      - [Chapter 2 - Part 6.4: Choosing Between a Data Warehouse and a Data Lake](#chapter2part6.4)
+      - [Chapter 2 - Part 6.5: Real-World Application](#chapter2part6.5)
   
 <div align="center"><img src="img/example-w1054-h609.png" width=1054 height=609><br><sub>Example - (<a href='https://github.com/vitorstabile'>Work by Vitor Garcia</a>) </sub></div>
   
@@ -895,3 +910,60 @@ Data engineers, data scientists, and data analysts often collaborate on projects
 | **Examples**          | MySQL, PostgreSQL, SQL Server, Oracle                                 | MongoDB, Redis, Cassandra, Neo4j                                   |
 
 **Hypothetical Scenario**
+
+### <a name="chapter2part2"></a>Chapter 2 - Part 2: Relational Database Concepts: Tables, Schemas, and Keys
+
+#### <a name="chapter2part2.1"></a>Chapter 2 - Part 2.1: Tables: Organizing Data into Rows and Columns
+
+#### <a name="chapter2part2.2"></a>Chapter 2 - Part 2.2: Schemas: Organizing Tables and Defining Structure
+
+#### <a name="chapter2part2.3"></a>Chapter 2 - Part 2.3: Schemas: Establishing Relationships and Ensuring Data Integrity
+
+### <a name="chapter2part3"></a>Chapter 2 - Part 3: Introduction to SQL: Querying and Data Manipulation
+
+#### <a name="chapter2part3.1"></a>Chapter 2 - Part 3.1: Relational Database Refresher
+
+#### <a name="chapter2part3.2"></a>Chapter 2 - Part 3.2: Basic SQL Syntax and Structure
+
+#### <a name="chapter2part3.3"></a>Chapter 2 - Part 3.3: Retrieving Data with SELECT
+
+#### <a name="chapter2part3.4"></a>Chapter 2 - Part 3.4: Data Manipulation with INSERT, UPDATE, and DELETE
+
+#### <a name="chapter2part3.5"></a>Chapter 2 - Part 3.5: Advanced Filtering with LIKE, IN, and BETWEEN
+
+#### <a name="chapter2part3.6"></a>Chapter 2 - Part 3.6: Working with NULL Values
+
+#### <a name="chapter2part3.7"></a>Chapter 2 - Part 3.7: Aggregate Functions
+
+#### <a name="chapter2part3.8"></a>Chapter 2 - Part 3.8: Joining Tables
+
+### <a name="chapter2part4"></a>Chapter 2 - Part 4: NoSQL Database Concepts: Document, Key-Value, and Graph Stores
+
+#### <a name="chapter2part4.1"></a>Chapter 2 - Part 4.1: Document Databases
+
+#### <a name="chapter2part4.2"></a>Chapter 2 - Part 4.2: Key-Value Stores
+
+#### <a name="chapter2part4.3"></a>Chapter 2 - Part 4.3: Graph Databases
+
+#### <a name="chapter2part4.4"></a>Chapter 2 - Part 4.4: Choosing the Right NoSQL Database
+
+### <a name="chapter2part5"></a>Chapter 2 - Part 5: Choosing the Right Database for Your Needs
+
+#### <a name="chapter2part5.1"></a>Chapter 2 - Part 5.1: Key Considerations for Database Selection
+
+#### <a name="chapter2part5.2"></a>Chapter 2 - Part 5.2: Database Selection Matrix
+
+#### <a name="chapter2part5.3"></a>Chapter 2 - Part 5.3: Practical Examples
+
+### <a name="chapter2part6"></a>Chapter 2 - Part 6: Introduction to Data Warehouses and Data Lakes
+
+#### <a name="chapter2part6.1"></a>Chapter 2 - Part 6.1: Data Warehouses: Structured Data Repositories
+
+#### <a name="chapter2part6.2"></a>Chapter 2 - Part 6.2: Data Lakes: Flexible Data Repositories
+
+#### <a name="chapter2part6.3"></a>Chapter 2 - Part 6.3: Data Warehouse vs. Data Lake: Key Differences
+
+#### <a name="chapter2part6.4"></a>Chapter 2 - Part 6.4: Choosing Between a Data Warehouse and a Data Lake
+
+#### <a name="chapter2part6.5"></a>Chapter 2 - Part 6.5: Real-World Application
+
