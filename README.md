@@ -1312,7 +1312,215 @@ These categories represent the core functionalities you'll use to interact with 
 
 #### <a name="chapter2part3.3"></a>Chapter 2 - Part 3.3: Basic SQL Syntax and Structure
 
+SQL statements are composed of keywords, identifiers, operators, and expressions. The basic structure of a SQL query typically involves specifying the action you want to perform (e.g., SELECT, INSERT, UPDATE, DELETE) and the table(s) you want to operate on.
+
+Here's a simple example of a SQL query:
+
+```sql
+SELECT column1, column2 FROM table_name WHERE condition;
+```
+
+- ```SELECT```: Specifies the columns you want to retrieve.
+- ```FROM```: Specifies the table you want to retrieve data from.
+- ```WHERE```: Specifies a condition to filter the data.
+
+SQL is generally case-insensitive for keywords (e.g., ```SELECT``` is the same as ```select```), but it's best practice to use uppercase for keywords to improve readability. Identifiers (table names, column names) might be case-sensitive depending on the specific database system.
+
 #### <a name="chapter2part3.4"></a>Chapter 2 - Part 3.4: Retrieving Data with SELECT
+
+The ```SELECT``` statement is the most fundamental SQL command for retrieving data from a database.
+
+**Selecting All Columns**
+
+To select all columns from a table, you can use the asterisk (```*```) wildcard:
+
+```sql
+SELECT * FROM employees;
+```
+
+This query will return all columns and rows from the ```employees``` table.
+
+**Selecting Specific Columns**
+
+To select only specific columns, list the column names separated by commas:
+
+```sql
+SELECT employee_id, first_name, last_name FROM employees;
+```
+
+This query will return only the ```employee_id```, ```first_name```, and ```last_name``` columns from the ```employees``` table.
+
+**Aliasing Columns**
+
+You can use aliases to rename columns in the result set. This can be useful for improving readability or providing more descriptive names. Use the ```AS``` keyword to define an alias:
+
+```sql
+SELECT employee_id AS id, first_name AS given_name, last_name AS surname FROM employees;
+```
+
+In this example, ```employee_id``` is aliased as ```id```, ```first_name``` as ```given_name```, and ```last_name``` as ```surname```.
+
+**Filtering Data with WHERE**
+
+The ```WHERE``` clause allows you to filter the data based on a specified condition. You can use various comparison operators (e.g., ```=```, ```!=```, ```>```, ```<```, ```>=```, ```<=```) and logical operators (e.g., ```AND```, ```OR```, ```NOT```) to create complex conditions.
+
+```sql
+SELECT * FROM employees WHERE department = 'Sales';
+```
+
+This query will return all employees from the ```Sales``` department.
+
+```sql
+SELECT * FROM employees WHERE salary > 50000 AND hire_date < '2022-01-01';
+```
+
+This query will return all employees who earn more than $50,000 and were hired before January 1, 2022.
+
+**Sorting Data with ORDER BY**
+
+The ```ORDER BY``` clause allows you to sort the result set based on one or more columns. You can specify the sorting order as ascending (```ASC```, default) or descending (```DESC```).
+
+```sql
+SELECT * FROM employees ORDER BY last_name ASC, first_name ASC;
+```
+
+This query will sort the employees first by last name in ascending order, and then by first name in ascending order within each last name.
+
+```sql
+SELECT * FROM employees ORDER BY salary DESC;
+```
+
+This query will sort the employees by salary in descending order (highest salary first).
+
+**Limiting Results with LIMIT**
+
+The ```LIMIT``` clause allows you to restrict the number of rows returned by the query. This can be useful for pagination or retrieving only the top N results.
+
+```sql
+SELECT * FROM employees ORDER BY salary DESC LIMIT 10;
+```
+
+This query will return the top 10 highest-paid employees.
+
+**Using DISTINCT to Remove Duplicates**
+
+The ```DISTINCT``` keyword is used to retrieve only unique values from a column.
+
+```sql
+SELECT DISTINCT department FROM employees;
+```
+
+This query will return a list of all unique department names in the ```employees``` table.
+
+**Subqueries**
+
+Subqueries can appear in several parts of a SQL statement:
+
+- **WHERE clause:** To filter results based on a condition.
+
+- **SELECT clause:** To return a single value.
+
+- **FROM clause:** To treat the result of the subquery as a table.
+
+- **HAVING clause:** To filter group results based on a condition.
+
+Types of Subqueries:
+
+- **Scalar Subquery:** Returns a single value.
+
+- **Column Subquery:** Returns a single column of multiple rows.
+
+- **Table Subquery:** Returns a result set that can be treated as a table.
+
+- **Correlated Subquery:** A subquery that depends on the outer query for its values.
+
+We'll use the same ```Employees``` and ```Departments``` tables as before, and introduce a ```Salaries``` table.
+
+**Employees Table:**
+
+| EmployeeID  | EmployeeName| DepartmentID |
+| :---------: | :----------:| :-----------:|
+| 1           | Alice       | 101          |
+| 2           | Bob         | 102          |
+| 3           | Charlie     | 101          |
+| 4           | David       | 103          |
+
+
+**Departments Table:**
+
+| DepartmentID  | DepartmentName |
+| :-----------: | :-------------:|
+| 101           | Sales          |
+| 102           | Marketing      |
+| 104           | Finance        |
+
+**Salaries Table:**
+
+| EmployeeID  | Salary      |
+| :---------: | :----------:|
+| 1           | 60000       |
+| 2           | 75000       |
+| 3           | 50000       |
+| 4           | 80000       |
+
+**Subquery in the WHERE clause (Scalar Subquery):**
+
+Let's find employees who earn more than the average salary of all employees.
+
+```sql
+SELECT EmployeeName
+FROM Employees
+WHERE EmployeeID IN (SELECT EmployeeID FROM Salaries WHERE Salary > (SELECT AVG(Salary) FROM Salaries));
+```
+
+- **Inner Subquery:** ```SELECT AVG(Salary)``` FROM Salaries calculates the average salary across all employees.
+
+- **Outer Query:** Selects the ```EmployeeName``` from the ```Employees``` table where their ```EmployeeID``` is present in the ```Salaries``` table and their salary is greater than the average salary obtained from the inner subquery.
+
+**Subquery in the WHERE clause (Column Subquery):**
+
+Let's find the employees who work in the Sales or Marketing departments.
+
+```sql
+SELECT EmployeeName
+FROM Employees
+WHERE DepartmentID IN (SELECT DepartmentID FROM Departments WHERE DepartmentName IN ('Sales', 'Marketing'));
+```
+
+- **Inner Subquery:** ```SELECT DepartmentID FROM Departments WHERE DepartmentName IN ('Sales', 'Marketing')``` retrieves the ```DepartmentID``` for the Sales and Marketing departments.
+
+- **Outer Query:** Selects the ```EmployeeName``` from the ```Employees``` table where their ```DepartmentID``` matches the ```DepartmentIDs``` returned by the inner subquery.
+
+**Subquery in the FROM clause (Table Subquery):**
+
+Let's find the average salary for each department.
+
+```sql
+SELECT d.DepartmentName, AVG(s.Salary) AS AverageSalary
+FROM (SELECT e.DepartmentID, s.Salary FROM Employees e JOIN Salaries s ON e.EmployeeID = s.EmployeeID) AS s
+JOIN Departments d ON s.DepartmentID = d.DepartmentID
+GROUP BY d.DepartmentName;
+```
+
+- **Inner Subquery:** ```SELECT e.DepartmentID, s.Salary FROM Employees e JOIN Salaries s ON e.EmployeeID = s.EmployeeID``` joins the ```Employees``` and ```Salaries``` tables to get the ```DepartmentID``` and ```Salary``` for each employee. This result is aliased as "s".
+
+- **Outer Query:** Joins the result of the inner subquery with the ```Departments``` table to get the ```DepartmentName```, and then calculates the average salary for each department.
+
+**Correlated Subquery:**
+
+Find employees who earn more than the average salary in their respective department.
+
+```sql
+SELECT e.EmployeeName, s.Salary, d.DepartmentName
+FROM Employees e
+JOIN Salaries s ON e.EmployeeID = s.EmployeeID
+JOIN Departments d ON e.DepartmentID = d.DepartmentID
+WHERE s.Salary > (SELECT AVG(Salary) FROM Salaries s2 JOIN Employees e2 ON s2.EmployeeID = e2.EmployeeID WHERE e2.DepartmentID = e.DepartmentID);
+```
+
+- **Inner Subquery:** ```SELECT AVG(Salary) FROM Salaries s2 JOIN Employees e2 ON s2.EmployeeID = e2.EmployeeID WHERE e2.DepartmentID = e.DepartmentID``` calculates the average salary for the employee's department. Note that ```e.DepartmentID``` in the subquery refers to the ```DepartmentID``` from the outer query's ```Employees``` table.
+
+- **Outer Query:** Selects the ```EmployeeName```, ```Salary```, and ```DepartmentName``` for employees whose salary is greater than the average salary in their department (as calculated by the correlated subquery).
 
 #### <a name="chapter2part3.5"></a>Chapter 2 - Part 3.5: Data Manipulation with INSERT, UPDATE, and DELETE
 
