@@ -1137,7 +1137,119 @@ Here:
 
 #### <a name="chapter2part2.2"></a>Chapter 2 - Part 2.2: Schemas: Organizing Tables and Defining Structure
 
+A schema is a blueprint or a container that organizes tables and other database objects (like views, indexes, and stored procedures) within a database. It defines the structure and organization of the database. Think of it as a folder that holds all the related tables and objects for a specific application or purpose.
+
+**Benefits of Using Schemas**
+
+- **Organization:** Schemas help to logically group related tables and objects, making it easier to manage and maintain the database.
+
+- **Security:** Schemas can be used to control access to specific tables and objects, allowing you to grant different permissions to different users or groups.
+
+- **Namespace Management:** Schemas provide a namespace for database objects, preventing naming conflicts when multiple applications or users are using the same database. For example, two different applications can have a table named "Customers" if they are in different schemas.
+
+**Example: E-commerce Database Schema**
+
+In an e-commerce database, you might have the following schemas:
+
+- **public (or dbo in SQL Server):** This is often the default schema and might contain core tables like ```Customers```, ```Products```, and ```Orders```.
+  
+- **sales:** This schema could contain tables related to sales transactions, such as ```OrderDetails```, ```Payments```, and ```Shipping```.
+  
+- **inventory:** This schema could contain tables related to inventory management, such as ```StockLevels```, ```Suppliers```, and ```Warehouses```.
+
+**Example: University Database Schema**
+
+In a university database, you might have the following schemas:
+
+- **public (or dbo in SQL Server):** This might contain core tables like ```Students```, ```Courses```, and ```Instructors```.
+
+- **registration:** This schema could contain tables related to course registration, such as ```Enrollments```, ```Waitlists```, and ```Sections```.
+
+- **finance:** This schema could contain tables related to student finances, such as ```Tuition```, ```Scholarships```, and ```Payments```.
+
+**Implicit vs. Explicit Schemas**
+
+Some database systems use implicit schemas, where a default schema is assumed if none is specified. Others require explicit schema specification when creating or accessing database objects. For example, in PostgreSQL, if you don't specify a schema, it defaults to the ```public``` schema. In SQL Server, the default is often ```dbo```.
+
+When querying tables, you often need to specify the schema name along with the table name (e.g., ```sales.Orders```). This is especially important when working with multiple schemas in the same database.
+
 #### <a name="chapter2part2.3"></a>Chapter 2 - Part 2.3: Schemas: Establishing Relationships and Ensuring Data Integrity
+
+Keys are crucial for establishing relationships between tables and ensuring data integrity in a relational database. They are columns (or sets of columns) that enforce uniqueness and define how tables relate to each other.
+
+**Primary Key**
+
+A primary key is a column (or a set of columns) that uniquely identifies each row in a table. It must have the following properties:
+
+- **Uniqueness:** No two rows can have the same primary key value.
+
+- **Non-null:** The primary key column(s) cannot contain null values.
+
+- **Immutability:** While not strictly enforced by all database systems, it's best practice for primary key values to be immutable (i.e., not change over time).
+
+Each table should have one and only one primary key.
+
+**Foreign Key**
+
+A foreign key is a column (or a set of columns) in one table that refers to the primary key of another table. It establishes a link between the two tables. The table containing the foreign key is called the child table, and the table containing the primary key is called the parent table.
+
+Foreign keys enforce referential integrity, which means that the values in the foreign key column must exist in the primary key column of the parent table. This prevents orphaned records and ensures data consistency.
+
+**Composite Key**
+
+A composite key is a primary key that consists of two or more columns. It is used when a single column cannot uniquely identify a row in a table. The combination of the columns must be unique.
+
+**Example: Customers and Orders Tables**
+
+Let's revisit the ```Customers``` and introduce an ```Orders``` table to illustrate primary and foreign keys:
+
+**Customers Table:**
+
+| customer_id | first_name | last_name | email                     | phone_number   |
+| :---------: | :---------:| :--------:| :------------------------:| :-------------:|
+| 1           | John       | Doe       | john.doe@example.com      | 555-123-4567   |
+| 2           | Jane       | Smith     | jane.smith@example.com    | 555-987-6543   |
+| 3           | Peter      | Jones     | peter.jones@example.com   | 555-246-8013   |
+
+In this table, ```customer_id``` is the primary key.
+
+**Orders Table:**
+
+| order_id    | customer_id | last_name | order_date  | total_amount   |
+| :---------: | :----------:| :--------:| :----------:| :-------------:|
+| 1001        | 1           | Doe       | 2023-10-26  | 150.00         |
+| 1002        | 2           | Smith     | 2023-10-26  | 75.00          |
+| 1003        | 1           | Jones     | 2023-10-27  | 200.00         |
+| 1004        | 3           | Jones     | 2023-10-27  | 50.00          |
+
+
+In this table:
+
+- ```order_id``` is the primary key.
+
+- ```customer_id``` is a foreign key that references the ```customer_id``` column in the ```Customers``` table. This establishes a relationship between customers and their orders.
+
+The foreign key relationship ensures that every ```customer_id``` in the ```Orders``` table exists in the ```Customers``` table. You cannot create an order for a ```customer_id``` that doesn't exist in the ```Customers``` table.
+
+**Example: Order Details Table (Composite Key)**
+
+To further illustrate, let's add an ```OrderDetails``` table:
+
+| order_id    | product_id  | quantity | unit_price  |
+| :---------: | :----------:| :-------:| :----------:|
+| 1001        | 101         | 1        | 1200        |
+| 1001        | 102         | 2        | 25          |
+| 1002        | 103         | 1        | 75          |
+| 1003        | 101         | 1        | 1200        |
+| 1004        | 102         | 1        | 25          |
+
+In this table:
+
+- ```order_id is``` a foreign key referencing the ```Orders``` table.
+
+- ```product_id``` is a foreign key referencing the ```Products``` table (introduced earlier).
+
+- The combination of ```order_id``` and ```product_id``` forms a composite key. This is because a single order can contain multiple products, and a single product can be part of multiple orders. The combination of ```order_id``` and ```product_id``` uniquely identifies each row in the ```OrderDetails``` table.
 
 ### <a name="chapter2part3"></a>Chapter 2 - Part 3: Introduction to SQL: Querying and Data Manipulation
 
