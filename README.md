@@ -1101,7 +1101,39 @@ Each column in a table is assigned a specific data type. The data type defines t
 
 Choosing the correct data type is crucial for data integrity and storage efficiency. For example, storing a phone number as an integer would be incorrect because phone numbers often contain leading zeros or dashes.
 
+**Example: A Customer Table**
 
+Let's consider a simple example of a ```Customers``` table:
+
+| customer_id | first_name | last_name | email                     | phone_number   |
+| :---------: | :---------:| :--------:| :------------------------:| :-------------:|
+| 1           | John       | Doe       | john.doe@example.com      | 555-123-4567   |
+| 2           | Jane       | Smith     | jane.smith@example.com    | 555-987-6543   |
+| 3           | Peter      | Jones     | peter.jones@example.com   | 555-246-8013   |
+
+In this table:
+
+- ```customer_id``` is an integer representing a unique identifier for each customer.
+- ```first_name``` and ```last_name``` are text strings storing the customer's name.
+- ```email``` is a text string storing the customer's email address.
+- ```phone_number``` is a text string storing the customer's phone number.
+
+**Example: A Products Table**
+
+Another common table is a ```Products``` table:
+
+| product_id   | product_name | description                                   | price         |
+| :----------: | :-----------:| :--------------------------------------------:| :------------:|
+| 101          | Laptop       | High-performance laptop with 16GB RAM         | 1200          |
+| 102          | Mouse        | Wireless ergonomic mouse                      | 25            | 
+| 103          | Keyboard     | Mechanical keyboard with RGB backlighting     | 75            |
+
+Here:
+
+- ```product_id``` is an integer uniquely identifying each product.
+- ```product_name``` is a text string storing the product's name.
+- ```description``` is a text string providing a detailed description of the product.
+- ```price``` is a float or decimal representing the product's price.
 
 #### <a name="chapter2part2.2"></a>Chapter 2 - Part 2.2: Schemas: Organizing Tables and Defining Structure
 
