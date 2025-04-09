@@ -47,8 +47,14 @@
       - [Chapter 2 - Part 3.5: Data Manipulation with INSERT, UPDATE, and DELETE](#chapter2part3.5)
       - [Chapter 2 - Part 3.6: Advanced Filtering with LIKE, IN, and BETWEEN](#chapter2part3.6)
       - [Chapter 2 - Part 3.7: Working with NULL Values](#chapter2part3.7)
-      - [Chapter 2 - Part 3.8: Aggregate Functions](#chapter2part3.8)
-      - [Chapter 2 - Part 3.9: Joining Tables](#chapter2part3.9)
+      - [Chapter 2 - Part 3.8: Joining Tables](#chapter2part3.8)
+      - [Chapter 2 - Part 3.9: Aggregate Functions](#chapter2part3.9)
+      - [Chapter 2 - Part 3.10: Scalar Functions](#chapter2part3.10)
+      - [Chapter 2 - Part 3.11: Case manipulation Functions](#chapter2part3.11)
+      - [Chapter 2 - Part 3.12: Character manipulation Functions](#chapter2part3.12)
+      - [Chapter 2 - Part 3.13: Case() Functions](#chapter2part3.13)
+      - [Chapter 2 - Part 3.14: Set Operators](#chapter2part3.14)
+      - [Chapter 2 - Part 3.15: CTE (Common Table Expression)](#chapter2part3.15)
     - [Chapter 2 - Part 4: NoSQL Database Concepts: Document, Key-Value, and Graph Stores](#chapter2part4)
       - [Chapter 2 - Part 4.1: Document Databases](#chapter2part4.1)
       - [Chapter 2 - Part 4.2: Key-Value Stores](#chapter2part4.2)
@@ -1524,13 +1530,550 @@ WHERE s.Salary > (SELECT AVG(Salary) FROM Salaries s2 JOIN Employees e2 ON s2.Em
 
 #### <a name="chapter2part3.5"></a>Chapter 2 - Part 3.5: Data Manipulation with INSERT, UPDATE, and DELETE
 
+SQL also provides statements for manipulating data in the database.
+
+**Inserting Data with INSERT**
+
+The ```INSERT``` statement allows you to add new rows to a table.
+
+```sql
+INSERT INTO employees (first_name, last_name, department, salary, hire_date)
+VALUES ('John', 'Doe', 'Marketing', 60000, '2023-03-15');
+```
+
+This statement inserts a new employee with the specified values into the ```employees``` table. Make sure the order of values matches the order of columns specified in the ```INSERT INTO``` clause. If you are inserting values for all columns in the table, you can omit the column list:
+
+```sql
+INSERT INTO employees
+VALUES ('1234', 'Jane', 'Smith', 'HR', 70000, '2022-05-20');
+```
+
+In this case, you must provide values for all columns in the table, and in the correct order as defined in the table schema.
+
+**Updating Data with UPDATE**
+
+The ```UPDATE``` statement allows you to modify existing rows in a table. It's crucial to use the ```WHERE``` clause to specify which rows should be updated; otherwise, all rows in the table will be modified.
+
+```sql
+UPDATE employees SET salary = 65000 WHERE employee_id = '1234';
+```
+
+This statement updates the salary of the employee with ```employee_id``` '1234' to $65,000.
+
+```sql
+UPDATE employees SET department = 'Sales', salary = salary * 1.10 WHERE department = 'Marketing';
+```
+
+This statement updates the department to 'Sales' and increases the salary by 10% for all employees in the 'Marketing' department.
+
+**Deleting Data with DELETE**
+
+The ```DELETE``` statement allows you to remove rows from a table. Similar to ```UPDATE```, it's crucial to use the ```WHERE``` clause to specify which rows should be deleted; otherwise, all rows in the table will be deleted.
+
+```sql
+DELETE FROM employees WHERE employee_id = '1234';
+```
+
+This statement deletes the employee with ```employee_id``` '1234' from the ```employees``` table.
+
+```sql
+DELETE FROM employees WHERE hire_date < '2010-01-01' AND department = 'IT';
+```
+
+This statement deletes all employees hired before January 1, 2010, from the IT department.
+
 #### <a name="chapter2part3.6"></a>Chapter 2 - Part 3.6: Advanced Filtering with LIKE, IN, and BETWEEN
+
+SQL provides additional operators for more advanced filtering.
+
+**LIKE Operator**
+
+The ```LIKE``` operator is used for pattern matching. It uses wildcard characters to match strings. The two most common wildcard characters are:
+
+- ```%```: Matches any sequence of zero or more characters.
+- ```_```: Matches any single character.
+
+```sql
+SELECT * FROM employees WHERE last_name LIKE 'S%';
+```
+
+This query will return all employees whose last name starts with 'S'.
+
+```sql
+SELECT * FROM employees WHERE first_name LIKE '%a%';
+```
+
+This query will return all employees whose first name contains the letter 'a'.
+
+```sql
+SELECT * FROM products WHERE product_name LIKE 'Laptop_%';
+```
+
+This query will return all products whose name starts with "Laptop_" followed by any single character.
+
+**IN Operator**
+
+The ```IN``` operator allows you to specify a list of values to match against.
+
+```sql
+SELECT * FROM employees WHERE department IN ('Sales', 'Marketing', 'HR');
+```
+
+This query will return all employees who belong to the Sales, Marketing, or HR departments.
+
+**BETWEEN Operator**
+
+The ```BETWEEN``` operator allows you to specify a range of values to match against.
+
+```sql
+SELECT * FROM employees WHERE salary BETWEEN 50000 AND 70000;
+```
+
+This query will return all employees whose salary is between $50,000 and $70,000 (inclusive).
+
+```sql
+SELECT * FROM orders WHERE order_date BETWEEN '2023-01-01' AND '2023-03-31';
+```
+
+This query will return all orders placed between January 1, 2023, and March 31, 2023.
 
 #### <a name="chapter2part3.7"></a>Chapter 2 - Part 3.7: Working with NULL Values
 
-#### <a name="chapter2part3.8"></a>Chapter 2 - Part 3.8: Aggregate Functions
+```NULL``` represents a missing or unknown value. Special care must be taken when working with ```NULL``` values, as they cannot be compared using standard comparison operators (e.g., ```=```, ```!=```). Instead, you must use the ```IS NULL``` and ```IS NOT NULL``` operators.
 
-#### <a name="chapter2part3.9"></a>Chapter 2 - Part 3.9: Joining Tables
+```sql
+SELECT * FROM employees WHERE department IS NULL;
+```
+
+This query will return all employees whose department is unknown (i.e., the ```department``` column contains ```NULL```).
+
+```sql
+SELECT * FROM employees WHERE department IS NOT NULL;
+```
+
+This query will return all employees whose department is known (i.e., the ```department``` column does not contain ```NULL```).
+
+You cannot use ```WHERE department = NULL``` because comparing anything to ```NULL``` with ```=``` will always result in ```NULL```, and the ```WHERE``` clause treats ```NULL``` as false.
+
+#### <a name="chapter2part3.8"></a>Chapter 2 - Part 3.8: Joining Tables
+
+Joining tables allows you to combine data from multiple tables based on a related column. This is a fundamental operation in relational databases. We will cover joins in more detail in the next lesson, but here's a brief introduction.
+
+- **INNER JOIN:** Returns only the rows that have matching values in both tables.
+
+- **LEFT (OUTER) JOIN:** Returns all rows from the left table and the matched rows from the right table. If there is no match in the right table, it returns NULL values for the columns from the right table.
+
+- **RIGHT (OUTER) JOIN:** Returns all rows from the right table and the matched rows from the left table. If there is no match in the left table, it returns NULL values for the columns from the left table.
+
+- **FULL (OUTER) JOIN:** Returns all rows when there is a match in either the left or right table. If there is no match, it returns NULL values for the columns from the table that lacks a match.
+
+- **CROSS JOIN:** Returns the Cartesian product of the tables involved. Every row from the first table is combined with every row from the second table. Use with caution, as it can generate very large result sets!
+
+**Employees Table:**
+
+| EmployeeID  | EmployeeName| DepartmentID |
+| :---------: | :----------:| :-----------:|
+| 1           | Alice       | 101          |
+| 2           | Bob         | 102          |
+| 3           | Charlie     | 101          |
+| 4           | David       | 103          |
+
+
+**Departments Table:**
+
+| DepartmentID  | DepartmentName |
+| :-----------: | :-------------:|
+| 101           | Sales          |
+| 102           | Marketing      |
+| 104           | Finance        |
+
+-  INNER JOIN:
+
+  This join will return only the employees who belong to a department that exists in the ```Departments``` table.
+
+```sql
+SELECT Employees.EmployeeName, Departments.DepartmentName
+FROM Employees
+INNER JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+```
+
+| EmployeeName  | DepartmentName |
+| :-----------: | :-------------:|
+| Alice         | Sales          |
+| Bob           | Marketing      |
+| Charlie       | Sales          |
+
+-  LEFT (OUTER) JOIN:
+
+This join will return all employees and their department names, if available. If an employee doesn't belong to a department in the ```Departments``` table, the department name will be NULL.
+
+```sql
+SELECT Employees.EmployeeName, Departments.DepartmentName
+FROM Employees
+LEFT JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+```
+
+| EmployeeName  | DepartmentName |
+| :-----------: | :-------------:|
+| Alice         | Sales          |
+| Bob           | Marketing      |
+| Charlie       | Sales          |
+| David         | NULL           |
+
+-  RIGHT (OUTER) JOIN:
+
+This join will return all departments and the employees in them, if any. If a department has no employees in the Employees table, the employee name will be NULL.
+
+```sql
+SELECT Employees.EmployeeName, Departments.DepartmentName
+FROM Employees
+RIGHT JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+```
+
+| EmployeeName  | DepartmentName |
+| :-----------: | :-------------:|
+| Alice         | Sales          |
+| Bob           | Marketing      |
+| Charlie       | Sales          |
+| NULL          | Finance        |
+
+-  FULL (OUTER) JOIN:
+
+This join will return all employees and all departments. If there's no match between the tables, you'll see NULL values for the missing information. Note: Not all SQL databases support FULL OUTER JOIN.
+
+```sql
+SELECT Employees.EmployeeName, Departments.DepartmentName
+FROM Employees
+FULL OUTER JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+```
+
+| EmployeeName  | DepartmentName |
+| :-----------: | :-------------:|
+| Alice         | Sales          |
+| Bob           | Marketing      |
+| Charlie       | Sales          |
+| David         | NULL           |
+| NULL          | Finance        |
+
+-  CROSS JOIN:
+
+This join will return every possible combination of employees and departments.
+
+```sql
+SELECT Employees.EmployeeName, Departments.DepartmentName
+FROM Employees
+CROSS JOIN Departments;
+```
+
+| EmployeeName  | DepartmentName |
+| :-----------: | :-------------:|
+| Alice         | Sales          |
+| Alice         | Marketing      |
+| Alice         | Finance        |
+| Bob           | Sales          |
+| Bob           | Marketing      |
+| Bob           | Finance        |
+| Charlie       | Sales          |
+| Charlie       | Marketing      |
+| Charlie       | Finance        |
+| David         | Sales          |
+| David         | Sales          |
+| David         | Finance        |
+
+#### <a name="chapter2part3.9"></a>Chapter 2 - Part 3.9: Aggregate Functions
+
+Aggregate functions perform calculations on a set of values and return a single result. Common aggregate functions include:
+
+- COUNT(): Counts the number of rows.
+- SUM(): Calculates the sum of values.
+- AVG(): Calculates the average of values.
+- MIN(): Finds the minimum value.
+- MAX(): Finds the maximum value.
+- FIRST(): returns the first value from a column
+- LAST():returns the last value from a column
+
+```sql
+SELECT COUNT(*) FROM employees;
+```
+
+This query will return the total number of employees in the employees table.
+
+```sql
+SELECT AVG(salary) FROM employees WHERE department = 'Sales';
+```
+
+This query will return the average salary of employees in the Sales department.
+
+```sql
+SELECT MAX(salary) AS max_salary, MIN(salary) AS min_salary FROM employees;
+```
+
+This query will return the maximum and minimum salaries of all employees, aliased as max_salary and min_salary, respectively.
+
+**Grouping Data with GROUP BY**
+
+The ```GROUP BY``` clause is used to group rows that have the same value in one or more columns. It is typically used in conjunction with aggregate functions to perform calculations on each group.
+
+```sql
+SELECT department, COUNT(*) AS employee_count FROM employees GROUP BY department;
+```
+
+This query will return the number of employees in each department.
+
+```sql
+SELECT department, AVG(salary) AS average_salary FROM employees GROUP BY department ORDER BY average_salary DESC;
+```
+
+This query will return the average salary for each department, sorted in descending order by average salary.
+
+**Filtering Groups with HAVING**
+
+The ```HAVING``` clause is used to filter groups based on a specified condition. It is similar to the ```WHERE``` clause, but it operates on groups rather than individual rows. The ```HAVING``` clause is always used with the GROUP BY clause.
+
+```sql
+SELECT department, AVG(salary) AS average_salary FROM employees GROUP BY department HAVING AVG(salary) > 60000;
+```
+
+This query will return the departments where the average salary is greater than $60,000.
+
+#### <a name="chapter2part3.10"></a>Chapter 2 - Part 3.10: Scalar Functions
+
+- LEN() (in other SQL flavors – LENGTH()) – returns the length of a string, including the blank spaces
+
+- UCASE() (in other SQL flavors – UPPER()) – returns a string converted to the upper case
+
+- LCASE() (in other SQL flavors – LOWER()) – returns a string converted to the lower case
+
+- INITCAP() – returns a string converted to the title case (i.e., each word of the string starts from a capital letter)
+
+- MID() (in other SQL flavors – SUBSTR()) – extracts a substring from a string
+
+- ROUND() – returns the numerical value rounded to a specified number of decimals
+
+- NOW() – returns the current date and time
+
+```sql
+-- Length of the product name
+SELECT ProductName, LENGTH(ProductName) AS NameLength FROM Products;
+
+-- Product name in uppercase
+SELECT ProductName, UPPER(ProductName) AS UppercaseName FROM Products;
+
+-- Product name in lowercase
+SELECT ProductName, LOWER(ProductName) AS LowercaseName FROM Products;
+
+-- Round the price to the nearest whole number
+SELECT ProductName, ROUND(Price) AS RoundedPrice FROM Products;
+
+-- Current date and time
+SELECT NOW();
+```
+
+#### <a name="chapter2part3.11"></a>Chapter 2 - Part 3.11: Case manipulation Functions
+
+Case manipulation functions represent a subset of character functions, and they're used to change the case of the text data. With these functions, we can convert the data into the upper, lower, or title case.
+
+- UCASE() (in other SQL flavors – UPPER()) – returns a string converted to the upper case
+
+- LCASE() (in other SQL flavors – LOWER()) – returns a string converted to the lower case
+
+- INITCAP() – returns a string converted to the title case (i.e., each word of the string starts from a capital letter)
+
+```sql
+-- Product name in uppercase
+SELECT ProductName, UCASE(ProductName) AS UppercaseName FROM Products;
+
+-- Product name in lowercase
+SELECT ProductName, LCASE(ProductName) AS LowercaseName FROM Products;
+
+-- (Hypothetical) Product name in title case (not supported in all SQL dialects)
+-- SELECT ProductName, INITCAP(ProductName) AS TitleCaseName FROM Products;
+```
+
+#### <a name="chapter2part3.12"></a>Chapter 2 - Part 3.12: Character manipulation Functions
+
+Character manipulation functions represent a subset of character functions, and they're used to modify the text data.
+
+- CONCAT() – joins two or more string values appending the second string to the end of the first one
+
+- SUBSTR() – returns a part of a string satisfying the provided start and end points
+
+- LENGTH() (in other SQL flavors – LEN()) – returns the length of a string, including the blank spaces
+
+- REPLACE() – replaces all occurrences of a defined substring in a provided string with another substring
+
+- INSTR() – returns the numeric position of a defined substring in a provided string
+
+- LPAD() and RPAD() – return the padding of the left-side/right-side character for right-justified/left-justified value
+
+- TRIM() – removes all the defined characters, as well as white spaces, from the left, right, or both ends of a provided string
+
+```sql
+-- Concatenate product name and category
+SELECT CONCAT(ProductName, ' (', Category, ')') AS ProductInfo FROM Products;
+
+-- Extract the first 5 characters of the product name
+SELECT ProductName, SUBSTR(ProductName, 1, 5) AS ShortName FROM Products;
+
+-- Find the position of 'laptop' in the description
+SELECT Description, INSTR(Description, 'laptop') AS LaptopPosition FROM Products;
+
+-- Replace 'leather' with 'genuine leather' in the description
+SELECT Description, REPLACE(Description, 'leather', 'genuine leather') AS UpdatedDescription FROM Products;
+
+-- Pad the product name with spaces on the left to a length of 20
+SELECT ProductName, LPAD(ProductName, 20, ' ') AS PaddedProductName FROM Products;
+
+-- Remove leading and trailing spaces from the description (if any)
+SELECT Description, TRIM(Description) AS TrimmedDescription FROM Products;
+```
+
+#### <a name="chapter2part3.13"></a>Chapter 2 - Part 3.13: Case() Functions
+
+The way to implement the if-then-else logic in SQL. This function sequentially checks the provided conditions in the WHEN clauses and returns the value from the corresponding THEN clause when the first condition is satisfied. If none of the conditions is satisfied, the function returns the value from the ELSE clause in case it's provided, otherwise, it returns NULL. The syntax is:
+
+```sql
+CASE
+    WHEN condition_1 THEN value_1
+    WHEN condition_2 THEN value_2
+    WHEN condition_3 THEN value_3
+    ...
+    ELSE value
+END;
+```
+
+#### <a name="chapter2part3.14"></a>Chapter 2 - Part 3.14: Set Operators
+
+Set operators are used to combine the results of two or more ```SELECT``` statements into a single result set. These operators treat the result of each SELECT statement as a set and perform operations on these sets.
+
+**Key Requirements:**
+
+- The ```SELECT``` statements must have the same number of columns in the result sets.
+  
+- The corresponding columns in the ```SELECT``` statements must have compatible data types.
+  
+- The order and names of the columns do not need to be the same, but the data types must be compatible.
+
+**Common Set Operators:**
+
+- UNION: Combines the result sets of two or more SELECT statements, removing duplicate rows.
+
+- UNION ALL: Combines the result sets of two or more SELECT statements, including all rows (duplicates are not removed).
+
+- INTERSECT: Returns the rows that are common to the result sets of two SELECT statements.
+
+- MINUS (or EXCEPT): Returns the rows from the first SELECT statement that are not present in the result set of the second SELECT statement.
+
+Table 1: Customers
+
+| CustomerID  | CustomerName | City          |
+| :---------: | :-----------:|:-------------:|
+| 1           | Alice        | New York      |
+| 2           | Bob          | Los Angeles   |
+| 3           | Charlie      | Chicago       |
+| 4           | David        | Houston       |
+
+Table 1: Orders
+
+| OrderID  | CustomerID | City          |
+| :------: | :---------:|:-------------:|
+| 101      | 1          | New York      |
+| 102      | 2          | Los Angeles   |
+| 103      | 5          | Miami         |
+| 104      | 6          | Dallas        |
+
+- 1. UNION:
+
+Let's combine the cities from the Customers and Orders tables, removing duplicates.
+
+```sql
+SELECT City FROM Customers
+UNION
+SELECT City FROM Orders;
+```
+
+| City          |
+|:-------------:|
+| New York      |
+| Los Angeles   |
+| Chicago       |
+| Houstoun      |
+| Miami         |
+| Dallas        |
+
+- 2. UNION ALL:
+
+Let's combine the cities from the Customers and Orders tables, including duplicates.
+
+| City          |
+|:-------------:|
+| New York      |
+| Los Angeles   |
+| Chicago       |
+| Houstoun      |
+| New York      |
+| Los Angeles   |
+| Miami         |
+| Dallas        |
+
+- 3. INTERSECT:
+ 
+Let's find the cities that are present in both the Customers and Orders tables.
+
+```sql
+SELECT City FROM Customers
+INTERSECT
+SELECT City FROM Orders;
+```
+
+| City          |
+|:-------------:|
+| New York      |
+| Los Angeles   |
+
+- 4. MINUS (or EXCEPT):
+
+Let's find the cities that are present in the Customers table but not in the Orders table.
+
+```sql
+SELECT City FROM Customers
+EXCEPT -- or MINUS, depending on the database system
+SELECT City FROM Orders;
+```
+
+| City          |
+|:-------------:|
+| Chicago       |
+| Houston       |
+
+#### <a name="chapter2part3.15"></a>Chapter 2 - Part 3.15: CTE (Common Table Expression)
+
+A CTE (Common Table Expression) is a temporary named result set that you can define within a single SELECT, INSERT, UPDATE, or DELETE statement. It's essentially a named subquery that exists only for the duration of the query execution. CTEs are not stored as database objects; they are temporary and exist only in memory while the query is running.
+
+- Temporary: CTEs exist only for the duration of a single query.
+
+- Named Result Set: They provide a name for a subquery, making the query more readable and maintainable.
+
+- Recursive: CTEs can be recursive, allowing you to work with hierarchical data.
+
+- Multiple CTEs: You can define multiple CTEs within a single query.
+
+- Readability: CTEs improve the readability and structure of complex queries.
+
+- Reusability: They allow you to reuse the result set within the main query, avoiding redundant calculations or subqueries.
+
+```sql
+WITH CTE_Name AS (
+    -- Subquery definition
+    SELECT column1, column2
+    FROM TableName
+    WHERE condition
+)
+-- Main query that uses the CTE
+SELECT column1, column2
+FROM CTE_Name
+WHERE condition;
+```
 
 ### <a name="chapter2part4"></a>Chapter 2 - Part 4: NoSQL Database Concepts: Document, Key-Value, and Graph Stores
 
