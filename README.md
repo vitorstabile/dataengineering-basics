@@ -1075,7 +1075,33 @@ Imagine you are building a social media application.
 
 ### <a name="chapter2part2"></a>Chapter 2 - Part 2: Relational Database Concepts: Tables, Schemas, and Keys
 
+Relational databases are the backbone of many data-driven applications. Understanding their fundamental concepts – tables, schemas, and keys – is crucial for anyone working with data, especially in the field of data engineering. This lesson will provide a comprehensive overview of these concepts, equipping you with the knowledge to design and interact with relational databases effectively. We'll explore how these elements work together to ensure data integrity, consistency, and efficient retrieval.
+
 #### <a name="chapter2part2.1"></a>Chapter 2 - Part 2.1: Tables: Organizing Data into Rows and Columns
+
+At the heart of a relational database lies the table. A table is a collection of related data organized in a structured format of rows and columns. Think of it like a spreadsheet, but with more rigid rules and capabilities.
+
+- **Rows (Tuples/Records):** Each row represents a single instance of the entity the table describes. For example, in a table of customers, each row would represent a specific customer.
+
+- **Columns (Attributes/Fields):** Each column represents a specific attribute or characteristic of the entity. In the customer table, columns might include customer ID, name, address, and phone number.
+
+**Data Types**
+
+Each column in a table is assigned a specific data type. The data type defines the kind of values that can be stored in that column. Common data types include:
+
+- **Integer:** Whole numbers (e.g., 1, 100, -5).
+
+- **Float/Decimal:** Numbers with decimal points (e.g., 3.14, 2.718).
+
+- **Text/String:** Sequences of characters (e.g., "John Doe", "123 Main St").
+
+- **Boolean:** True/False values.
+
+- **Date/Time:** Represents dates and times (e.g., 2023-10-27, 14:30:00).
+
+Choosing the correct data type is crucial for data integrity and storage efficiency. For example, storing a phone number as an integer would be incorrect because phone numbers often contain leading zeros or dashes.
+
+
 
 #### <a name="chapter2part2.2"></a>Chapter 2 - Part 2.2: Schemas: Organizing Tables and Defining Structure
 
