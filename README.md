@@ -41,13 +41,14 @@
       - [Chapter 2 - Part 2.3: Keys: Establishing Relationships and Ensuring Data Integrity](#chapter2part2.3)
     - [Chapter 2 - Part 3: Introduction to SQL: Querying and Data Manipulation](#chapter2part3)
       - [Chapter 2 - Part 3.1: Relational Database Refresher](#chapter2part3.1)
-      - [Chapter 2 - Part 3.2: Basic SQL Syntax and Structure](#chapter2part3.2)
-      - [Chapter 2 - Part 3.3: Retrieving Data with SELECT](#chapter2part3.3)
-      - [Chapter 2 - Part 3.4: Data Manipulation with INSERT, UPDATE, and DELETE](#chapter2part3.4)
-      - [Chapter 2 - Part 3.5: Advanced Filtering with LIKE, IN, and BETWEEN](#chapter2part3.5)
-      - [Chapter 2 - Part 3.6: Working with NULL Values](#chapter2part3.6)
-      - [Chapter 2 - Part 3.7: Aggregate Functions](#chapter2part3.7)
-      - [Chapter 2 - Part 3.8: Joining Tables](#chapter2part3.8)
+      - [Chapter 2 - Part 3.2: Different categories of SQL commands: DDL, DML, DCL, TCL, and DQL](#chapter2part3.2)
+      - [Chapter 2 - Part 3.3: Basic SQL Syntax and Structure](#chapter2part3.3)
+      - [Chapter 2 - Part 3.4: Retrieving Data with SELECT](#chapter2part3.4)
+      - [Chapter 2 - Part 3.5: Data Manipulation with INSERT, UPDATE, and DELETE](#chapter2part3.5)
+      - [Chapter 2 - Part 3.6: Advanced Filtering with LIKE, IN, and BETWEEN](#chapter2part3.6)
+      - [Chapter 2 - Part 3.7: Working with NULL Values](#chapter2part3.7)
+      - [Chapter 2 - Part 3.8: Aggregate Functions](#chapter2part3.8)
+      - [Chapter 2 - Part 3.9: Joining Tables](#chapter2part3.9)
     - [Chapter 2 - Part 4: NoSQL Database Concepts: Document, Key-Value, and Graph Stores](#chapter2part4)
       - [Chapter 2 - Part 4.1: Document Databases](#chapter2part4.1)
       - [Chapter 2 - Part 4.2: Key-Value Stores](#chapter2part4.2)
@@ -1253,21 +1254,75 @@ In this table:
 
 ### <a name="chapter2part3"></a>Chapter 2 - Part 3: Introduction to SQL: Querying and Data Manipulation
 
+SQL (Structured Query Language) is the standard language for interacting with relational databases. It allows you to retrieve, manipulate, and manage data stored in tables. Understanding SQL is crucial for any data engineer, as it forms the foundation for data extraction, transformation, and loading (ETL) processes, as well as data analysis and reporting. This lesson will provide a comprehensive introduction to SQL, focusing on querying and data manipulation techniques.
+
 #### <a name="chapter2part3.1"></a>Chapter 2 - Part 3.1: Relational Database Refresher
 
-#### <a name="chapter2part3.2"></a>Chapter 2 - Part 3.2: Basic SQL Syntax and Structure
+Before diving into SQL, let's briefly recap some key relational database concepts covered in the previous lesson. A relational database organizes data into tables, where each table consists of rows (records) and columns (fields). Tables are related to each other through keys, such as primary keys (uniquely identifying each row in a table) and foreign keys (establishing relationships between tables). A schema defines the structure of the database, including the tables, columns, data types, and constraints.
 
-#### <a name="chapter2part3.3"></a>Chapter 2 - Part 3.3: Retrieving Data with SELECT
+#### <a name="chapter2part3.2"></a>Chapter 2 - Part 3.3: Different categories of SQL commands: DDL, DML, DCL, TCL, and DQL
 
-#### <a name="chapter2part3.4"></a>Chapter 2 - Part 3.4: Data Manipulation with INSERT, UPDATE, and DELETE
+These categories represent the core functionalities you'll use to interact with databases.
 
-#### <a name="chapter2part3.5"></a>Chapter 2 - Part 3.5: Advanced Filtering with LIKE, IN, and BETWEEN
+- **Data Definition Language (DDL):**
+  - **Purpose:** DDL is used to define and manage the structure of your database. Think of it as the blueprint for your database.
+    - **Common Commands:**
+      - ```CREATE```: Used to create database objects like tables, indexes, and views.
+        - Example: ```CREATE TABLE Employees (ID INT, Name VARCHAR(255));```
+      - ```ALTER```: Used to modify the structure of existing database objects.
+        - Example: ```ALTER TABLE Employees ADD COLUMN Salary DECIMAL(10, 2);```
+      - ```DROP```: Used to delete database objects.
+        - Example: ```DROP TABLE Employees;```
+      - ```TRUNCATE```: Used to remove all data from a table, but the table structure remains.
+        - Example: ```TRUNCATE TABLE Employees;```
+      - ```RENAME```: Used to rename a database object.
+        - Example: ```RENAME TABLE Employees TO Staff;```
+       
+- **Data Manipulation Language (DML):**
+  - **Purpose:** DML is used to manipulate the data stored within the database. This includes inserting, updating, and deleting data.
+    - **Common Commands:**
+      - ```INSERT```: Used to insert new data into a table.
+        - Example: ```INSERT INTO Employees (ID, Name) VALUES (1, 'John Doe');```
+      - ```UPDATE```: Used to modify existing data in a table.
+        - Example: ```UPDATE Employees SET Salary = 50000 WHERE ID = 1;```
+      - ```DELETE```: Used to delete data from a table.
+        - Example: ```DELETE FROM Employees WHERE ID = 1;```
+       
+- **Data Control Language (DCL):**
+  - **Purpose:** DCL is used to control access and permissions within the database. It's all about security and who can do what.
+    - **Common Commands:**
+      - ```GRANT```: Used to grant privileges to users or roles.
+        - Example: ```GRANT SELECT, INSERT ON Employees TO user1;```
+      - ```REVOKE```: Used to revoke privileges from users or roles.
+        - Example: ```REVOKE SELECT ON Employees FROM user1;```
+       
+- **Transaction Control Language (TCL):**
+  - **Purpose:** TCL is used to manage transactions within the database. Transactions are sequences of operations that should be treated as a single unit of work.
+    - **Common Commands:**
+      - ```COMMIT```: Used to save all changes made during a transaction.
+      - ```ROLLBACK```: Used to undo all changes made during a transaction, reverting the database to its previous state.
+      - ```SAVEPOINT```: Used to set a point within a transaction to which you can later rollback.
+     
+- **Data Query Language (DQL):**
+  - **Purpose:** DQL is used to query and retrieve data from the database. The primary DQL command is ```SELECT```.
+    - **Common Commands:**
+      - ```SELECT```: Used to retrieve data from one or more tables.
+        - Example: ```SELECT * FROM Employees; (selects all columns and rows)```
+        - Example: ```SELECT Name, Salary FROM Employees WHERE Salary > 40000;``` (selects specific columns and filters rows)
 
-#### <a name="chapter2part3.6"></a>Chapter 2 - Part 3.6: Working with NULL Values
+#### <a name="chapter2part3.3"></a>Chapter 2 - Part 3.3: Basic SQL Syntax and Structure
 
-#### <a name="chapter2part3.7"></a>Chapter 2 - Part 3.7: Aggregate Functions
+#### <a name="chapter2part3.4"></a>Chapter 2 - Part 3.4: Retrieving Data with SELECT
 
-#### <a name="chapter2part3.8"></a>Chapter 2 - Part 3.8: Joining Tables
+#### <a name="chapter2part3.5"></a>Chapter 2 - Part 3.5: Data Manipulation with INSERT, UPDATE, and DELETE
+
+#### <a name="chapter2part3.6"></a>Chapter 2 - Part 3.6: Advanced Filtering with LIKE, IN, and BETWEEN
+
+#### <a name="chapter2part3.7"></a>Chapter 2 - Part 3.7: Working with NULL Values
+
+#### <a name="chapter2part3.8"></a>Chapter 2 - Part 3.8: Aggregate Functions
+
+#### <a name="chapter2part3.9"></a>Chapter 2 - Part 3.9: Joining Tables
 
 ### <a name="chapter2part4"></a>Chapter 2 - Part 4: NoSQL Database Concepts: Document, Key-Value, and Graph Stores
 
