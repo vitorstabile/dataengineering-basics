@@ -70,6 +70,153 @@
       - [Chapter 2 - Part 6.3: Data Warehouse vs. Data Lake: Key Differences](#chapter2part6.3)
       - [Chapter 2 - Part 6.4: Choosing Between a Data Warehouse and a Data Lake](#chapter2part6.4)
       - [Chapter 2 - Part 6.5: Real-World Application](#chapter2part6.5)
+3. [Chapter 3: Data Ingestion and ETL](#chapter3)
+    - [Chapter 3 - Part 1: Introduction to Data Ingestion](#chapter3part1)
+      - [Chapter 3 - Part 1.1: Data Ingestion: Core Concepts and Principles](#chapter3part1.1)
+      - [Chapter 3 - Part 1.2: Batch vs. Stream Processing](#chapter3part1.2)
+      - [Chapter 3 - Part 1.3: Introduction to Data Connectors and APIs](#chapter3part1.3)
+    - [Chapter 3 - Part 2: Extract, Transform, Load (ETL) Fundamentals](#chapter3part2)
+      - [Chapter 3 - Part 2.1: Understanding the ETL Process](#chapter3part2.1)
+      - [Chapter 3 - Part 2.2: ETL Architectures](#chapter3part2.2)
+      - [Chapter 3 - Part 2.3: ETL Tools](#chapter3part2.3)
+      - [Chapter 3 - Part 2.4: Data Quality Considerations in ETL](#chapter3part2.4)
+    - [Chapter 3 - Part 3: Batch vs. Stream Processing](#chapter3part3)
+      - [Chapter 3 - Part 3.1: Batch Processing](#chapter3part3.1)
+      - [Chapter 3 - Part 3.2: Stream Processing](#chapter3part3.2)
+      - [Chapter 3 - Part 3.3: Batch vs. Stream Processing: A Comparison](#chapter3part3.3)
+      - [Chapter 3 - Part 3.4: Choosing Between Batch and Stream Processing](#chapter3part3.4)
+      - [Chapter 3 - Part 3.5: Hybrid Approach](#chapter3part3.5)
+    - [Chapter 3 - Part 4: Introduction to Data Connectors and APIs](#chapter3part4)
+      - [Chapter 3 - Part 4.1: Understanding Data Connectors](#chapter3part4.1)
+      - [Chapter 3 - Part 4.2: Understanding APIs (Application Programming Interfaces)](#chapter3part4.2)
+      - [Chapter 3 - Part 4.3: Data Connector and API Integration in ETL Pipelines](#chapter3part4.3)
+      - [Chapter 3 - Part 4.4: Real-World Application](#chapter3part4.4)
+    - [Chapter 3 - Part 5: Building a Simple ETL Pipeline with Python](#chapter3part5)
+      - [Chapter 3 - Part 5.1: ETL Pipeline Components](#chapter3part5.1)
+      - [Chapter 3 - Part 5.2: Building a Simple ETL Pipeline with Python](#chapter3part5.2)
+    - [Chapter 3 - Part 6: Data Validation and Quality Checks](#chapter3part6)
+      - [Chapter 3 - Part 6.1: Importance of Data Validation](#chapter3part6.1)
+      - [Chapter 3 - Part 6.2: Types of Data Validation Checks](#chapter3part6.2)
+      - [Chapter 3 - Part 6.3: Implementing Data Validation in an ETL Pipeline](#chapter3part6.3)
+      - [Chapter 3 - Part 6.4: Handling Data Validation Errors](#chapter3part6.4)
+      - [Chapter 3 - Part 6.5: Data Quality Metrics](#chapter3part6.5)
+4. [Chapter 4: Introduction to Cloud Data Platforms](#chapter4)
+    - [Chapter 4 - Part 1: Overview of Cloud Computing for Data Engineering](#chapter4part1)
+      - [Chapter 4 - Part 1.1: Understanding Cloud Computing](#chapter4part1.1)
+      - [Chapter 4 - Part 1.2: Data Engineering in the Cloud: A Practical Example](#chapter4part1.2)
+      - [Chapter 4 - Part 1.3: Real-World Application](#chapter4part1.3)
+    - [Chapter 4 - Part 2: Introduction to AWS Data Services (S3, EC2, RDS)](#chapter4part2)
+      - [Chapter 4 - Part 2.1: Introduction to AWS Data Services](#chapter4part2.1)
+      - [Chapter 4 - Part 2.2: Amazon S3 (Simple Storage Service)](#chapter4part2.2)
+      - [Chapter 4 - Part 2.3: Amazon EC2 (Elastic Compute Cloud)](#chapter4part2.3)
+      - [Chapter 4 - Part 2.4: Amazon RDS (Relational Database Service)](#chapter4part2.4)
+      - [Chapter 4 - Part 2.5: Real-World Application](#chapter4part2.5)
+    - [Chapter 4 - Part 3: Introduction to Azure Data Services (Blob Storage, VMs, SQL Database)](#chapter4part3)
+      - [Chapter 4 - Part 3.1: Azure Blob Storage](#chapter4part3.1)
+      - [Chapter 4 - Part 3.2: Azure Virtual Machines (VMs)](#chapter4part3.2)
+      - [Chapter 4 - Part 3.3: Azure SQL Database](#chapter4part3.3)
+    - [Chapter 4 - Part 4: Introduction to Google Cloud Data Services (Cloud Storage, Compute Engine, Cloud SQL)](#chapter4part4)
+      - [Chapter 4 - Part 4.1: Introduction to Google Cloud Storage](#chapter4part4.1)
+      - [Chapter 4 - Part 4.2: Introduction to Google Compute Engine](#chapter4part4.2)
+      - [Chapter 4 - Part 4.3: Introduction to Cloud SQL](#chapter4part4.3)
+      - [Chapter 4 - Part 4.4: Real-World Application](#chapter4part4.4)
+    - [Chapter 4 - Part 5: Choosing a Cloud Provider for Your Data Engineering Projects](#chapter4part5)
+      - [Chapter 4 - Part 5.1: Key Considerations for Choosing a Cloud Provider](#chapter4part5.1)
+      - [Chapter 4 - Part 5.2: Comparing AWS, Azure, and GCP](#chapter4part5.2)
+      - [Chapter 4 - Part 5.3: Making the Right Choice](#chapter4part5.3)
+    - [Chapter 4 - Part 6: Deploying a Simple Data Pipeline in the Cloud](#chapter4part6)
+      - [Chapter 4 - Part 6.1: Understanding the Simple Data Pipeline](#chapter4part6.1)
+      - [Chapter 4 - Part 6.2: Deploying a Simple Pipeline: A Step-by-Step Example](#chapter4part6.2)
+5. [Chapter 5: Data Modeling and Schema Design](#chapter5)
+    - [Chapter 5 - Part 1: Data Modeling Fundamentals: Conceptual, Logical, and Physical Models](#chapter5part1)
+      - [Chapter 5 - Part 1.1: Understanding Data Models](#chapter5part1.1)
+      - [Chapter 5 - Part 1.2: Conceptual Data Model](#chapter5part1.2)
+      - [Chapter 5 - Part 1.3: Logical Data Model](#chapter5part1.3)
+      - [Chapter 5 - Part 1.4: Physical Data Model](#chapter5part1.4)
+      - [Chapter 5 - Part 1.5: Real-World Application](#chapter5part1.5)
+    - [Chapter 5 - Part 2: Schema Design Principles: Normalization and Denormalization](#chapter5part2)
+      - [Chapter 5 - Part 2.1: Normalization: Reducing Redundancy and Improving Data Integrity](#chapter5part2.1)
+      - [Chapter 5 - Part 2.2: Denormalization: Optimizing for Read Performance](#chapter5part2.2)
+      - [Chapter 5 - Part 2.3: Choosing Between Normalization and Denormalization](#chapter5part2.3)
+      - [Chapter 5 - Part 2.4: Real-World Application](#chapter5part2.4)
+    - [Chapter 5 - Part 3: Data Types and Data Structures](#chapter5part3)
+      - [Chapter 5 - Part 3.1: Data Types](#chapter5part3.1)
+      - [Chapter 5 - Part 3.2: Data Structures](#chapter5part3.2)
+      - [Chapter 5 - Part 3.3: Practical Examples and Demonstrations](#chapter5part3.3)
+    - [Chapter 5 - Part 4: Designing a Data Warehouse Schema (Star Schema, Snowflake Schema)](#chapter5part4)
+      - [Chapter 5 - Part 4.1: Star Schema](#chapter5part4.1)
+      - [Chapter 5 - Part 4.2: Snowflake Schema](#chapter5part4.2)
+      - [Chapter 5 - Part 4.3: Star Schema vs. Snowflake Schema: A Comparison](#chapter5part4.3)
+      - [Chapter 5 - Part 4.4: Choosing the Right Schema](#chapter5part4.4)
+    - [Chapter 5 - Part 5: Designing a Data Lake Schema](#chapter5part5)
+      - [Chapter 5 - Part 5.1: Data Lake Schema Fundamentals](#chapter5part5.1)
+      - [Chapter 5 - Part 5.2: Data Lake Schema Design Techniques](#chapter5part5.2)
+      - [Chapter 5 - Part 5.3: Practical Examples and Demonstrations](#chapter5part5.3)
+    - [Chapter 5 - Part 6: Implementing Schema Changes and Data Migration](#chapter5part6)
+      - [Chapter 5 - Part 6.1: Understanding Schema Evolution](#chapter5part6.1)
+      - [Chapter 5 - Part 6.2: Techniques for Implementing Schema Changes](#chapter5part6.2)
+      - [Chapter 5 - Part 6.3: Data Migration Strategies](#chapter5part6.3)
+      - [Chapter 5 - Part 6.4: Best Practices for Schema Changes and Data Migration](#chapter5part6.4)
+6. [Chapter 6: Data Pipelines and Workflow Orchestration](#chapter6)
+    - [Chapter 6 - Part 1: Introduction to Data Pipeline Orchestration](#chapter6part1)
+      - [Chapter 6 - Part 1.1: Understanding Data Pipeline Orchestration](#chapter6part1.1)
+      - [Chapter 6 - Part 1.2: Core Principles of Data Pipeline Orchestration](#chapter6part1.2)
+      - [Chapter 6 - Part 1.3: Practical Examples and Demonstrations](#chapter6part1.3)
+    - [Chapter 6 - Part 2: Apache Airflow Fundamentals](#chapter6part2)
+      - [Chapter 6 - Part 2.1: Core Concepts of Apache Airflow](#chapter6part2.1)
+      - [Chapter 6 - Part 2.2: Airflow Architecture](#chapter6part2.2)
+      - [Chapter 6 - Part 2.3: Building a Simple Data Pipeline with Airflow](#chapter6part2.3)
+    - [Chapter 6 - Part 3: Building a Data Pipeline with Airflow](#chapter6part3)
+      - [Chapter 6 - Part 3.1: Apache Airflow Fundamentals](#chapter6part3.1)
+      - [Chapter 6 - Part 3.2: Building a Data Pipeline with Airflow](#chapter6part3.2)
+      - [Chapter 6 - Part 3.3: Scheduling and Monitoring Data Pipelines](#chapter6part3.3)
+      - [Chapter 6 - Part 3.4: Introduction to Data Pipeline Automation](#chapter6part3.4)
+      - [Chapter 6 - Part 3.5: Error Handling and Logging in Data Pipelines](#chapter6part3.5)
+    - [Chapter 6 - Part 4: Scheduling and Monitoring Data Pipelines](#chapter6part4)
+      - [Chapter 6 - Part 4.1: Scheduling Data Pipelines](#chapter6part4.1)
+      - [Chapter 6 - Part 4.2: Monitoring Data Pipelines](#chapter6part4.2)
+    - [Chapter 6 - Part 5: Introduction to Data Pipeline Automation](#chapter6part5)
+      - [Chapter 6 - Part 5.1: Core Principles of Data Pipeline Automation](#chapter6part5.1)
+      - [Chapter 6 - Part 5.2: Benefits of Data Pipeline Automation](#chapter6part5.2)
+      - [Chapter 6 - Part 5.3: Tools for Data Pipeline Automation](#chapter6part5.3)
+      - [Chapter 6 - Part 5.4: Building Blocks of an Automated Data Pipeline](#chapter6part5.4)
+      - [Chapter 6 - Part 5.5: Example Scenario: Automating a Marketing Data Pipeline](#chapter6part5.5)
+    - [Chapter 6 - Part 6: Error Handling and Logging in Data Pipelines](#chapter6part6)
+      - [Chapter 6 - Part 6.1: Importance of Error Handling in Data Pipelines](#chapter6part6.1)
+      - [Chapter 6 - Part 6.2: Types of Errors in Data Pipelines](#chapter6part6.2)
+      - [Chapter 6 - Part 6.3: Error Handling Techniques](#chapter6part6.3)
+      - [Chapter 6 - Part 6.4: Logging in Data Pipelines](#chapter6part6.4)
+      - [Chapter 6 - Part 6.5: Integrating Error Handling and Logging](#chapter6part6.5)
+      - [Chapter 6 - Part 6.6: Real-World Application](#chapter6part6.6)
+7. [Chapter 7: Data Governance and Security](#chapter7)
+    - [Chapter 7 - Part 1: Introduction to Data Governance](#chapter7part1)
+      - [Chapter 7 - Part 1.1: Core Principles of Data Governance](#chapter7part1.1)
+      - [Chapter 7 - Part 1.2: Implementing Data Governance](#chapter7part1.2)
+      - [Chapter 7 - Part 1.3: Data Governance Framework Components](#chapter7part1.3)
+      - [Chapter 7 - Part 1.4: Real-World Application](#chapter7part1.4)
+    - [Chapter 7 - Part 2: Data Security Best Practices](#chapter7part2)
+      - [Chapter 7 - Part 2.1: Core Principles of Data Security](#chapter7part2.1)
+      - [Chapter 7 - Part 2.2: Implementing Data Security Best Practices](#chapter7part2.2)
+      - [Chapter 7 - Part 2.3: Hypothetical Scenario](#chapter7part2.3)
+    - [Chapter 7 - Part 3: Data Privacy and Compliance (GDPR, CCPA)](#chapter7part3)
+      - [Chapter 7 - Part 3.1: Understanding Data Privacy Principles](#chapter7part3.1)
+      - [Chapter 7 - Part 3.2: GDPR: General Data Protection Regulation](#chapter7part3.2)
+      - [Chapter 7 - Part 3.3: CCPA: California Consumer Privacy Act](#chapter7part3.3)
+      - [Chapter 7 - Part 3.4: GDPR vs. CCPA: Key Differences](#chapter7part3.4)
+    - [Chapter 7 - Part 4: Data Lineage and Metadata Management](#chapter7part4)
+      - [Chapter 7 - Part 4.1: Understanding Data Lineage](#chapter7part4.1)
+      - [Chapter 7 - Part 4.2: Understanding Metadata Management](#chapter7part4.2)
+      - [Chapter 7 - Part 4.3: Integrating Data Lineage and Metadata Management](#chapter7part4.3)
+      - [Chapter 7 - Part 4.4: Real-World Application](#chapter7part4.4)
+    - [Chapter 7 - Part 5: Data Access Control and Authentication](#chapter7part5)
+      - [Chapter 7 - Part 5.1: Core Principles of Data Access Control](#chapter7part5.1)
+      - [Chapter 7 - Part 5.2: Data Access Control Models](#chapter7part5.2)
+      - [Chapter 7 - Part 5.3: Authentication Methods](#chapter7part5.3)
+      - [Chapter 7 - Part 5.4: Implementing Data Access Control](#chapter7part5.4)
+      - [Chapter 7 - Part 5.5: Real-World Application](#chapter7part5.5)
+    - [Chapter 7 - Part 6: Implementing Data Governance Policies](#chapter7part6)
+      - [Chapter 7 - Part 6.1: Key Steps in Implementing Data Governance Policies](#chapter7part6.1)
+      - [Chapter 7 - Part 6.2: Practical Examples](#chapter7part6.2)
   
 <div align="center"><img src="img/example-w1054-h609.png" width=1054 height=609><br><sub>Example - (<a href='https://github.com/vitorstabile'>Work by Vitor Garcia</a>) </sub></div>
 
@@ -2654,3 +2801,297 @@ Consider Netflix, a company that leverages both data warehouses and data lakes.
 - **Data Warehouse:** Netflix uses a data warehouse to store structured data, such as subscription information, billing data, and marketing campaign results. This data is used to generate reports on subscriber growth, revenue, and marketing effectiveness.
 
 By combining the power of data lakes and data warehouses, Netflix can gain a comprehensive understanding of its business and deliver a superior customer experience.
+
+## <a name="chapter3"></a>Chapter 3: Data Ingestion and ETL
+
+#### <a name="chapter3part1"></a>Chapter 3 - Part 1: Introduction to Data Ingestion
+
+#### <a name="chapter3part1.1"></a>Chapter 3 - Part 1.1: Data Ingestion: Core Concepts and Principles
+
+#### <a name="chapter3part1.2"></a>Chapter 3 - Part 1.2: Batch vs. Stream Processing
+
+#### <a name="chapter3part1.3"></a>Chapter 3 - Part 1.3: Introduction to Data Connectors and APIs
+
+#### <a name="chapter3part2"></a>Chapter 3 - Part 2: Extract, Transform, Load (ETL) Fundamentals
+
+#### <a name="chapter3part2.1"></a>Chapter 3 - Part 2.1: Understanding the ETL Process
+
+#### <a name="chapter3part2.2"></a>Chapter 3 - Part 2.2: ETL Architectures
+
+#### <a name="chapter3part2.3"></a>Chapter 3 - Part 2.3: ETL Tools
+
+#### <a name="chapter3part2.4"></a>Chapter 3 - Part 2.4: Data Quality Considerations in ETL
+
+#### <a name="chapter3part3"></a>Chapter 3 - Part 3: Batch vs. Stream Processing
+
+#### <a name="chapter3part3.1"></a>Chapter 3 - Part 3.1: Batch Processing
+
+#### <a name="chapter3part3.2"></a>Chapter 3 - Part 3.2: Stream Processing
+
+#### <a name="chapter3part3.3"></a>Chapter 3 - Part 3.3: Batch vs. Stream Processing: A Comparison
+
+#### <a name="chapter3part3.4"></a>Chapter 3 - Part 3.4: Choosing Between Batch and Stream Processing
+
+#### <a name="chapter3part3.5"></a>Chapter 3 - Part 3.5: Hybrid Approach
+
+#### <a name="chapter3part4"></a>Chapter 3 - Part 4: Introduction to Data Connectors and APIs
+
+#### <a name="chapter3part4.1"></a>Chapter 3 - Part 4.1: Understanding Data Connectors
+
+#### <a name="chapter3part4.2"></a>Chapter 3 - Part 4.2: Understanding APIs (Application Programming Interfaces)
+
+#### <a name="chapter3part4.3"></a>Chapter 3 - Part 4.3: Data Connector and API Integration in ETL Pipelines
+
+#### <a name="chapter3part4.4"></a>Chapter 3 - Part 4.4: Real-World Application
+
+#### <a name="chapter3part5"></a>Chapter 3 - Part 5: Building a Simple ETL Pipeline with Python
+
+#### <a name="chapter3part5.1"></a>Chapter 3 - Part 5.1: ETL Pipeline Components
+
+#### <a name="chapter3part5.2"></a>Chapter 3 - Part 5.2: Building a Simple ETL Pipeline with Python
+
+#### <a name="chapter3part6"></a>Chapter 3 - Part 6: Data Validation and Quality Checks
+
+#### <a name="chapter3part6.1"></a>Chapter 3 - Part 6.1: Importance of Data Validation
+
+#### <a name="chapter3part6.2"></a>Chapter 3 - Part 6.2: Types of Data Validation Checks
+
+#### <a name="chapter3part6.3"></a>Chapter 3 - Part 6.3: Implementing Data Validation in an ETL Pipeline
+
+#### <a name="chapter3part6.4"></a>Chapter 3 - Part 6.4: Handling Data Validation Errors
+
+#### <a name="chapter3part6.5"></a>Chapter 3 - Part 6.5: Data Quality Metrics
+
+## <a name="chapter4"></a>Chapter 4: Introduction to Cloud Data Platforms
+
+#### <a name="chapter4part1"></a>Chapter 4 - Part 1: Overview of Cloud Computing for Data Engineering
+
+#### <a name="chapter4part1.1"></a>Chapter 4 - Part 1.1: Understanding Cloud Computing
+
+#### <a name="chapter4part1.2"></a>Chapter 4 - Part 1.2: Data Engineering in the Cloud: A Practical Example
+
+#### <a name="chapter4part1.3"></a>Chapter 4 - Part 1.3: Real-World Application
+
+#### <a name="chapter4part2"></a>Chapter 4 - Part 2: Introduction to AWS Data Services (S3, EC2, RDS)
+
+#### <a name="chapter4part2.1"></a>Chapter 4 - Part 2.1: Introduction to AWS Data Services
+
+#### <a name="chapter4part2.2"></a>Chapter 4 - Part 2.2: Amazon S3 (Simple Storage Service)
+
+#### <a name="chapter4part2.3"></a>Chapter 4 - Part 2.3: Amazon EC2 (Elastic Compute Cloud)
+
+#### <a name="chapter4part2.4"></a>Chapter 4 - Part 2.4: Amazon RDS (Relational Database Service)
+
+#### <a name="chapter4part2.5"></a>Chapter 4 - Part 2.5: Real-World Application
+
+#### <a name="chapter4part3"></a>Chapter 4 - Part 3: Introduction to Azure Data Services (Blob Storage, VMs, SQL Database)
+
+#### <a name="chapter4part3.1"></a>Chapter 4 - Part 3.1: Azure Blob Storage
+
+#### <a name="chapter4part3.2"></a>Chapter 4 - Part 3.2: Azure Virtual Machines (VMs)
+
+#### <a name="chapter4part3.3"></a>Chapter 4 - Part 3.3: Azure SQL Database
+
+#### <a name="chapter4part4"></a>Chapter 4 - Part 4: Introduction to Google Cloud Data Services (Cloud Storage, Compute Engine, Cloud SQL)
+
+#### <a name="chapter4part4.1"></a>Chapter 4 - Part 4.1: Introduction to Google Cloud Storage
+
+#### <a name="chapter4part4.2"></a>Chapter 4 - Part 4.2: Introduction to Google Compute Engine
+
+#### <a name="chapter4part4.3"></a>Chapter 4 - Part 4.3: Introduction to Cloud SQL
+
+#### <a name="chapter4part4.4"></a>Chapter 4 - Part 4.4: Real-World Application
+
+#### <a name="chapter4part5"></a>Chapter 4 - Part 5: Choosing a Cloud Provider for Your Data Engineering Projects
+
+#### <a name="chapter4part5.1"></a>Chapter 4 - Part 5.1: Key Considerations for Choosing a Cloud Provider
+
+#### <a name="chapter4part5.2"></a>Chapter 4 - Part 5.2: Comparing AWS, Azure, and GCP
+
+#### <a name="chapter4part5.3"></a>Chapter 4 - Part 5.3: Making the Right Choice
+
+#### <a name="chapter4part6"></a>Chapter 4 - Part 6: Deploying a Simple Data Pipeline in the Cloud
+
+#### <a name="chapter4part6.1"></a>Chapter 4 - Part 6.1: Understanding the Simple Data Pipeline
+
+#### <a name="chapter4part6.2"></a>Chapter 4 - Part 6.2: Deploying a Simple Pipeline: A Step-by-Step Example
+
+## <a name="chapter5"></a>Chapter 5: Data Modeling and Schema Design
+
+#### <a name="chapter5part1"></a>Chapter 5 - Part 1: Data Modeling Fundamentals: Conceptual, Logical, and Physical Models
+
+#### <a name="chapter5part1.1"></a>Chapter 5 - Part 1.1: Understanding Data Models
+
+#### <a name="chapter5part1.2"></a>Chapter 5 - Part 1.2: Conceptual Data Model
+
+#### <a name="chapter5part1.3"></a>Chapter 5 - Part 1.3: Logical Data Model
+
+#### <a name="chapter5part1.4"></a>Chapter 5 - Part 1.4: Physical Data Model
+
+#### <a name="chapter5part1.5"></a>Chapter 5 - Part 1.5: Real-World Application
+
+#### <a name="chapter5part2"></a>Chapter 5 - Part 2: Schema Design Principles: Normalization and Denormalization
+
+#### <a name="chapter5part2.1"></a>Chapter 5 - Part 2.1: Normalization: Reducing Redundancy and Improving Data Integrity
+
+#### <a name="chapter5part2.2"></a>Chapter 5 - Part 2.2: Denormalization: Optimizing for Read Performance
+
+#### <a name="chapter5part2.3"></a>Chapter 5 - Part 2.3: Choosing Between Normalization and Denormalization
+
+#### <a name="chapter5part2.4"></a>Chapter 5 - Part 2.4: Real-World Application
+
+#### <a name="chapter5part3"></a>Chapter 5 - Part 3: Data Types and Data Structures
+
+#### <a name="chapter5part3.1"></a>Chapter 5 - Part 3.1: Data Types
+
+#### <a name="chapter5part3.2"></a>Chapter 5 - Part 3.2: Data Structures
+
+#### <a name="chapter5part3.3"></a>Chapter 5 - Part 3.3: Practical Examples and Demonstrations
+
+#### <a name="chapter5part4"></a>Chapter 5 - Part 4: Designing a Data Warehouse Schema (Star Schema, Snowflake Schema)
+
+#### <a name="chapter5part4.1"></a>Chapter 5 - Part 4.1: Star Schema
+
+#### <a name="chapter5part4.2"></a>Chapter 5 - Part 4.2: Snowflake Schema
+
+#### <a name="chapter5part4.3"></a>Chapter 5 - Part 4.3: Star Schema vs. Snowflake Schema: A Comparison
+
+#### <a name="chapter5part4.4"></a>Chapter 5 - Part 4.4: Choosing the Right Schema
+
+#### <a name="chapter5part5"></a>Chapter 5 - Part 5: Designing a Data Lake Schema
+
+#### <a name="chapter5part5.1"></a>Chapter 5 - Part 5.1: Data Lake Schema Fundamentals
+
+#### <a name="chapter5part5.2"></a>Chapter 5 - Part 5.2: Data Lake Schema Design Techniques
+
+#### <a name="chapter5part5.3"></a>Chapter 5 - Part 5.3: Practical Examples and Demonstrations
+
+#### <a name="chapter5part6"></a>Chapter 5 - Part 6: Implementing Schema Changes and Data Migration
+
+#### <a name="chapter5part6.1"></a>Chapter 5 - Part 6.1: Understanding Schema Evolution
+
+#### <a name="chapter5part6.2"></a>Chapter 5 - Part 6.2: Techniques for Implementing Schema Changes
+
+#### <a name="chapter5part6.3"></a>Chapter 5 - Part 6.3: Data Migration Strategies
+
+#### <a name="chapter5part6.4"></a>Chapter 5 - Part 6.4: Best Practices for Schema Changes and Data Migration
+
+## <a name="chapter6"></a>Chapter 6: Data Pipelines and Workflow Orchestration
+
+#### <a name="chapter6part1"></a>Chapter 6 - Part 1: Introduction to Data Pipeline Orchestration
+
+#### <a name="chapter6part1.1"></a>Chapter 6 - Part 1.1: Understanding Data Pipeline Orchestration
+
+#### <a name="chapter6part1.2"></a>Chapter 6 - Part 1.2: Core Principles of Data Pipeline Orchestration
+
+#### <a name="chapter6part1.3"></a>Chapter 6 - Part 1.3: Practical Examples and Demonstrations
+
+#### <a name="chapter6part2"></a>Chapter 6 - Part 2: Apache Airflow Fundamentals
+
+#### <a name="chapter6part2.1"></a>Chapter 6 - Part 2.1: Core Concepts of Apache Airflow
+
+#### <a name="chapter6part2.2"></a>Chapter 6 - Part 2.2: Airflow Architecture
+
+#### <a name="chapter6part2.3"></a>Chapter 6 - Part 2.3: Building a Simple Data Pipeline with Airflow
+
+#### <a name="chapter6part3"></a>Chapter 6 - Part 3: Building a Data Pipeline with Airflow
+
+#### <a name="chapter6part3.1"></a>Chapter 6 - Part 3.1: Apache Airflow Fundamentals
+
+#### <a name="chapter6part3.2"></a>Chapter 6 - Part 3.2: Building a Data Pipeline with Airflow
+
+#### <a name="chapter6part3.3"></a>Chapter 6 - Part 3.3: Scheduling and Monitoring Data Pipelines
+
+#### <a name="chapter6part3.4"></a>Chapter 6 - Part 3.4: Introduction to Data Pipeline Automation
+
+#### <a name="chapter6part3.5"></a>Chapter 6 - Part 3.5: Error Handling and Logging in Data Pipelines
+
+#### <a name="chapter6part4"></a>Chapter 6 - Part 4: Scheduling and Monitoring Data Pipelines
+
+#### <a name="chapter6part4.1"></a>Chapter 6 - Part 4.1: Scheduling Data Pipelines
+
+#### <a name="chapter6part4.2"></a>Chapter 6 - Part 4.2: Monitoring Data Pipelines
+
+#### <a name="chapter6part5"></a>Chapter 6 - Part 5: Introduction to Data Pipeline Automation
+
+#### <a name="chapter6part5.1"></a>Chapter 6 - Part 5.1: Core Principles of Data Pipeline Automation
+
+#### <a name="chapter6part5.2"></a>Chapter 6 - Part 5.2: Benefits of Data Pipeline Automation
+
+#### <a name="chapter6part5.3"></a>Chapter 6 - Part 5.3: Tools for Data Pipeline Automation
+
+#### <a name="chapter6part5.4"></a>Chapter 6 - Part 5.4: Building Blocks of an Automated Data Pipeline
+
+#### <a name="chapter6part5.5"></a>Chapter 6 - Part 5.5: Example Scenario: Automating a Marketing Data Pipeline
+
+#### <a name="chapter6part6"></a>Chapter 6 - Part 6: Error Handling and Logging in Data Pipelines
+
+#### <a name="chapter6part6.1"></a>Chapter 6 - Part 6.1: Importance of Error Handling in Data Pipelines
+
+#### <a name="chapter6part6.2"></a>Chapter 6 - Part 6.2: Types of Errors in Data Pipelines
+
+#### <a name="chapter6part6.3"></a>Chapter 6 - Part 6.3: Error Handling Techniques
+
+#### <a name="chapter6part6.4"></a>Chapter 6 - Part 6.4: Logging in Data Pipelines
+
+#### <a name="chapter6part6.5"></a>Chapter 6 - Part 6.5: Integrating Error Handling and Logging
+
+#### <a name="chapter6part6.6"></a>Chapter 6 - Part 6.6: Real-World Application
+
+## <a name="chapter7"></a>Chapter 7: Data Governance and Security
+
+#### <a name="chapter7part1"></a>Chapter 7 - Part 1: Introduction to Data Governance
+
+#### <a name="chapter7part1.1"></a>Chapter 7 - Part 1.1: Core Principles of Data Governance
+
+#### <a name="chapter7part1.2"></a>Chapter 7 - Part 1.2: Implementing Data Governance
+
+#### <a name="chapter7part1.3"></a>Chapter 7 - Part 1.3: Data Governance Framework Components
+
+#### <a name="chapter7part1.4"></a>Chapter 7 - Part 1.4: Real-World Application
+
+#### <a name="chapter7part2"></a>Chapter 7 - Part 2: Data Security Best Practices
+
+#### <a name="chapter7part2.1"></a>Chapter 7 - Part 2.1: Core Principles of Data Security
+
+#### <a name="chapter7part2.2"></a>Chapter 7 - Part 2.2: Implementing Data Security Best Practices
+
+#### <a name="chapter7part2.3"></a>Chapter 7 - Part 2.3: Hypothetical Scenario
+
+#### <a name="chapter7part3"></a>Chapter 7 - Part 3: Data Privacy and Compliance (GDPR, CCPA)
+
+#### <a name="chapter7part3.1"></a>Chapter 7 - Part 3.1: Understanding Data Privacy Principles
+
+#### <a name="chapter7part3.2"></a>Chapter 7 - Part 3.2: GDPR: General Data Protection Regulation
+
+#### <a name="chapter7part3.3"></a>Chapter 7 - Part 3.3: CCPA: California Consumer Privacy Act
+
+#### <a name="chapter7part3.4"></a>Chapter 7 - Part 3.4: GDPR vs. CCPA: Key Differences
+
+#### <a name="chapter7part4"></a>Chapter 7 - Part 4: Data Lineage and Metadata Management
+
+#### <a name="chapter7part4.1"></a>Chapter 7 - Part 4.1: Understanding Data Lineage
+
+#### <a name="chapter7part4.2"></a>Chapter 7 - Part 4.2: Understanding Metadata Management
+
+#### <a name="chapter7part4.3"></a>Chapter 7 - Part 4.3: Integrating Data Lineage and Metadata Management
+
+#### <a name="chapter7part4.4"></a>Chapter 7 - Part 4.4: Real-World Application
+
+#### <a name="chapter7part5"></a>Chapter 7 - Part 5: Data Access Control and Authentication
+
+#### <a name="chapter7part5.1"></a>Chapter 7 - Part 5.1: Core Principles of Data Access Control
+
+#### <a name="chapter7part5.2"></a>Chapter 7 - Part 5.2: Data Access Control Models
+
+#### <a name="chapter7part5.3"></a>Chapter 7 - Part 5.3: Authentication Methods
+
+#### <a name="chapter7part5.4"></a>Chapter 7 - Part 5.4: Implementing Data Access Control
+
+#### <a name="chapter7part5.5"></a>Chapter 7 - Part 5.5: Real-World Application
+
+#### <a name="chapter7part6"></a>Chapter 7 - Part 6: Implementing Data Governance Policies
+
+#### <a name="chapter7part6.1"></a>Chapter 7 - Part 6.1: Key Steps in Implementing Data Governance Policies
+
+#### <a name="chapter7part6.2"></a>Chapter 7 - Part 6.2: Practical Examples
